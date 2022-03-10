@@ -72,6 +72,7 @@
             this.Yellow = new System.Windows.Forms.Button();
             this.Orange = new System.Windows.Forms.Button();
             this.Red = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.ToolPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -84,6 +85,7 @@
             this.ToolPanel.AutoSize = true;
             this.ToolPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ToolPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ToolPanel.Controls.Add(this.button1);
             this.ToolPanel.Controls.Add(this.label2);
             this.ToolPanel.Controls.Add(this.Velikost);
             this.ToolPanel.Controls.Add(this.tb);
@@ -97,7 +99,7 @@
             this.ToolPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.ToolPanel.Location = new System.Drawing.Point(0, 24);
             this.ToolPanel.Name = "ToolPanel";
-            this.ToolPanel.Size = new System.Drawing.Size(69, 725);
+            this.ToolPanel.Size = new System.Drawing.Size(69, 947);
             this.ToolPanel.TabIndex = 0;
             // 
             // label2
@@ -262,7 +264,7 @@
             this.nápovědaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1370, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1564, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -387,9 +389,8 @@
             this.Pic.BackColor = System.Drawing.Color.White;
             this.Pic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Pic.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.Pic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pic.Location = new System.Drawing.Point(69, 24);
-            this.Pic.MaximumSize = new System.Drawing.Size(2000, 2000);
+            this.Pic.MaximumSize = new System.Drawing.Size(3000, 2000);
             this.Pic.MinimumSize = new System.Drawing.Size(100, 100);
             this.Pic.Name = "Pic";
             this.Pic.Size = new System.Drawing.Size(1301, 725);
@@ -419,9 +420,9 @@
             this.ColorPanel.Controls.Add(this.Orange);
             this.ColorPanel.Controls.Add(this.Red);
             this.ColorPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ColorPanel.Location = new System.Drawing.Point(69, 716);
+            this.ColorPanel.Location = new System.Drawing.Point(69, 938);
             this.ColorPanel.Name = "ColorPanel";
-            this.ColorPanel.Size = new System.Drawing.Size(1301, 33);
+            this.ColorPanel.Size = new System.Drawing.Size(1495, 33);
             this.ColorPanel.TabIndex = 3;
             // 
             // currColor
@@ -563,12 +564,23 @@
             this.Red.UseVisualStyleBackColor = false;
             this.Red.Click += new System.EventHandler(this.Red_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(10, 781);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 28);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1564, 971);
             this.Controls.Add(this.ColorPanel);
             this.Controls.Add(this.Pic);
             this.Controls.Add(this.ToolPanel);
@@ -637,6 +649,7 @@
         private System.Windows.Forms.Button Green;
         private System.Windows.Forms.Button Yellow;
         private System.Windows.Forms.Button Orange;
+        private System.Windows.Forms.Button button1;
     }
 }
 

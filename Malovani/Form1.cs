@@ -24,12 +24,18 @@ namespace Malovani
         public Form1()
         {
             InitializeComponent();
+            Rectangle screeensize = Screen.PrimaryScreen.WorkingArea;
+
+            Pic.Height = screeensize.Height -50;
+            Pic.Width = screeensize.Width -70;
             bm = new Bitmap(Pic.Width, Pic.Height);
             g = Graphics.FromImage(bm);
             g.Clear(Color.White);
             Pic.Image = bm;
+            
             g.SmoothingMode = SmoothingMode.HighQuality;
             index = 1;
+
         }
 
         private void BtnPencil_Click(object sender, EventArgs e)
@@ -122,10 +128,15 @@ namespace Malovani
                 if (index == 4)
                 {
                     g.DrawRectangle(p, cx, cy, sx, sy);
+                    
                 }
                 if (index == 5)
                 {
                     g.DrawLine(p, cx, cy, x, y);
+                }
+                if (index == 7)
+                {
+                    g.DrawString("My String", this.Font, Brushes.Black, ClientRectangle);
                 }
             }
         }
@@ -139,6 +150,7 @@ namespace Malovani
 
         private void BtnPaint_Click(object sender, EventArgs e)
         {
+            New_Color = p.Color;
             index = 6;
         }    
         static Point Set_Point(PictureBox pb, Point pt)
@@ -192,6 +204,7 @@ namespace Malovani
             g = Graphics.FromImage(bm);
             g.Clear(Color.White);
             Pic.Image = bm;
+            
         }
 
         private void Tb_ValueChanged(object sender, EventArgs e)
@@ -315,7 +328,7 @@ namespace Malovani
         private void Green_Click(object sender, EventArgs e)
         {
             p.Color = Color.Green;
-            currColor.BackColor = p.Color;
+            currColor.BackColor = p.Color;                 
         }
 
         private void Blue_Click(object sender, EventArgs e)
@@ -360,6 +373,11 @@ namespace Malovani
             currColor.BackColor = p.Color;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            index = 7;
+        }
+
         private void OAplikaciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FAbout f = new FAbout();
@@ -377,9 +395,7 @@ namespace Malovani
 
         private void BtnColor_Click(object sender, EventArgs e)
         {
-            cd.ShowDialog();
-            New_Color = cd.Color;
-            //Pic.BackColor = cd.Color;
+            cd.ShowDialog();           
             p.Color = cd.Color;
             currColor.BackColor = p.Color;
         }
@@ -403,11 +419,8 @@ namespace Malovani
                 bm = new Bitmap(open.FileName);
                 if (bm.Width > Pic.Width || bm.Height > Pic.Height)
                 {
-                    Pic.SizeMode = PictureBoxSizeMode.StretchImage;
                     g = Graphics.FromImage(bm);
-
                     Pic.Image = bm;
-                    //Pic.SizeMode = PictureBoxSizeMode.Normal;
 
                 }
                 else
