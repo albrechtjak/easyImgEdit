@@ -17,7 +17,10 @@ namespace Malovani
         readonly Pen p = new Pen(Color.Black, 1);
         readonly Pen Eraser = new Pen(Color.White, 10);
         int index;
+        Bitmap btmBack = null;
         int x, y, sx, sy, cx, cy;
+        Rectangle screeensize = Screen.PrimaryScreen.WorkingArea;
+
 
         Color New_Color;
         readonly ColorDialog cd = new ColorDialog();
@@ -25,7 +28,6 @@ namespace Malovani
         public MainForm()
         {
             InitializeComponent();
-            Rectangle screeensize = Screen.PrimaryScreen.WorkingArea;
 
             Pic.Height = screeensize.Height - 50;
             Pic.Width = screeensize.Width - 50;
@@ -50,6 +52,8 @@ namespace Malovani
             py = e.Location;
             cx = e.X;
             cy = e.Y;
+            CloneAndEnable();
+
         }
 
         private void Pic_MouseMove(object sender, MouseEventArgs e)
@@ -152,14 +156,6 @@ namespace Malovani
                 }
             }
         }
-
-        private void BtnClear_Click(object sender, EventArgs e)
-        {
-            g.Clear(Color.White);
-            Pic.Image = bm;
-            index = 0;
-        }
-
         private void BtnPaint_Click(object sender, EventArgs e)
         {
             index = 6;
@@ -214,7 +210,7 @@ namespace Malovani
             bm = new Bitmap(Pic.Width, Pic.Height);
             g = Graphics.FromImage(bm);
             g.Clear(Color.White);
-            Pic.Image = bm;
+            Pic.Image = bm;          
 
         }
 
@@ -231,6 +227,7 @@ namespace Malovani
 
         private void CernobilyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CloneAndEnable();
             for (int y = 0; y < bm.Width; y++)
             {
                 for (int x = 0; x < bm.Height; x++)
@@ -244,6 +241,7 @@ namespace Malovani
         }
         private void NegativToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CloneAndEnable();
             for (int y = 0; y < bm.Width; y++)
             {
                 for (int x = 0; x < bm.Height; x++)
@@ -256,8 +254,16 @@ namespace Malovani
 
         }
 
+        private void CloneAndEnable()
+        {
+            btmBack = bm.Clone(new Rectangle(0, 0, Pic.Width, Pic.Height), bm.PixelFormat);
+            zpětToolStripMenuItem.Enabled = true;
+        }
+
         private void SepieToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            CloneAndEnable();
             for (int y = 0; y < bm.Height; y++)
             {
                 for (int x = 0; x < bm.Width; x++)
@@ -384,6 +390,23 @@ namespace Malovani
             index = 7;
         }
 
+        private void ZpetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bm = btmBack;
+            Pic.Image = bm;
+            g = Graphics.FromImage(bm);
+            btmBack = null;
+        }
+
+
+        private void SouborToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
+        {
+            if (btmBack == null)
+            {
+                zpětToolStripMenuItem.Enabled = false;
+            }
+        }
+
         private void OAplikaciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FAbout f = new FAbout();
@@ -408,6 +431,10 @@ namespace Malovani
 
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Pic.Height = screeensize.Height - 50;
+            Pic.Width = screeensize.Width - 50;
+            bm = new Bitmap(Pic.Width, Pic.Height);
+            g = Graphics.FromImage(bm);
             g.Clear(Color.White);
             Pic.Image = bm;
             index = 1;
@@ -415,61 +442,16 @@ namespace Malovani
         }
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog
-            {
-                Filter = "Image Files|*.jpg;*.png"
-            };
+            bm = IOClass.OpenFile(bm, Pic);
+            g = Graphics.FromImage(bm);
 
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                bm = new Bitmap(open.FileName);
-                if (bm.Width > Pic.Width || bm.Height > Pic.Height)
-                {
-                    g = Graphics.FromImage(bm);
-                    Pic.Image = bm;
-
-                }
-                else
-                {
-                    g = Graphics.FromImage(bm);
-                    Pic.Image = bm;
-                    Pic.Size = new Size(bm.Width, bm.Height);
-                }
-
-                g.SmoothingMode = SmoothingMode.HighQuality;
-
-            }
         }
+
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var sfd = new SaveFileDialog
-            {
-                Filter = "Jpg Image|*.jpg" +
-                        "|Png Image|*.png" +
-                        "|Bmp Image|*.bmp"
-            };
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                int picw = Pic.Width;
-                int pich = Pic.Height;
-                MessageBox.Show(picw.ToString() + " " + pich.ToString());
-                Bitmap btm = bm.Clone(new Rectangle(0, 0, picw, pich), bm.PixelFormat);
-                if (sfd.FileName.EndsWith(".jpg"))
-                {
-                    btm.Save(sfd.FileName, ImageFormat.Jpeg);
-                }
-                else if (sfd.FileName.EndsWith(".png"))
-                {
-                    btm.Save(sfd.FileName, ImageFormat.Png);
-
-                }
-                else if (sfd.FileName.EndsWith(".bmp"))
-                {
-                    btm.Save(sfd.FileName, ImageFormat.Bmp);
-
-                }
-
-            }
+            IOClass.Save(bm, Pic);
+        }       
         }
     }
-}
+
+

@@ -95,6 +95,7 @@ namespace Malovani
             // 
             // comboBoxFont
             // 
+            this.comboBoxFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFont.FormattingEnabled = true;
             this.comboBoxFont.Items.AddRange(new object[] {
             "Arial",
@@ -109,6 +110,7 @@ namespace Malovani
             // 
             // comboBoxSize
             // 
+            this.comboBoxSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSize.FormattingEnabled = true;
             this.comboBoxSize.Items.AddRange(new object[] {
             "8",

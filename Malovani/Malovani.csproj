@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IOClass.cs" />
     <Compile Include="FAbout.cs">
       <SubType>Form</SubType>
     </Compile>
