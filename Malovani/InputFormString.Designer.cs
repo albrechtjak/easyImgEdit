@@ -42,7 +42,7 @@ namespace Malovani
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 47);
+            this.label1.Location = new System.Drawing.Point(11, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace Malovani
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 94);
+            this.label2.Location = new System.Drawing.Point(12, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 13);
             this.label2.TabIndex = 1;
@@ -59,7 +59,7 @@ namespace Malovani
             // 
             // textBox
             // 
-            this.textBox.Location = new System.Drawing.Point(46, 44);
+            this.textBox.Location = new System.Drawing.Point(45, 56);
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(285, 20);
             this.textBox.TabIndex = 2;
@@ -78,7 +78,7 @@ namespace Malovani
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 9);
+            this.label3.Location = new System.Drawing.Point(12, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 13);
             this.label3.TabIndex = 5;
@@ -87,7 +87,7 @@ namespace Malovani
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(179, 94);
+            this.label4.Location = new System.Drawing.Point(178, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 6;
@@ -103,7 +103,7 @@ namespace Malovani
             "Courier New",
             "Times New Roman",
             "Tahoma"});
-            this.comboBoxFont.Location = new System.Drawing.Point(46, 91);
+            this.comboBoxFont.Location = new System.Drawing.Point(45, 82);
             this.comboBoxFont.Name = "comboBoxFont";
             this.comboBoxFont.Size = new System.Drawing.Size(122, 21);
             this.comboBoxFont.TabIndex = 7;
@@ -122,13 +122,14 @@ namespace Malovani
             "32",
             "46",
             "64"});
-            this.comboBoxSize.Location = new System.Drawing.Point(229, 91);
+            this.comboBoxSize.Location = new System.Drawing.Point(228, 82);
             this.comboBoxSize.Name = "comboBoxSize";
             this.comboBoxSize.Size = new System.Drawing.Size(102, 21);
             this.comboBoxSize.TabIndex = 8;
             // 
             // InputFormString
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 163);

@@ -40,7 +40,7 @@ namespace Malovani
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 47);
+            this.label1.Location = new System.Drawing.Point(95, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace Malovani
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 84);
+            this.label2.Location = new System.Drawing.Point(97, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 1;
@@ -57,7 +57,7 @@ namespace Malovani
             // 
             // textBoxH
             // 
-            this.textBoxH.Location = new System.Drawing.Point(147, 44);
+            this.textBoxH.Location = new System.Drawing.Point(135, 49);
             this.textBoxH.Name = "textBoxH";
             this.textBoxH.Size = new System.Drawing.Size(100, 20);
             this.textBoxH.TabIndex = 2;
@@ -65,7 +65,7 @@ namespace Malovani
             // 
             // textBoxW
             // 
-            this.textBoxW.Location = new System.Drawing.Point(147, 81);
+            this.textBoxW.Location = new System.Drawing.Point(135, 75);
             this.textBoxW.Name = "textBoxW";
             this.textBoxW.Size = new System.Drawing.Size(100, 20);
             this.textBoxW.TabIndex = 3;
@@ -91,8 +91,9 @@ namespace Malovani
             this.label3.TabIndex = 5;
             this.label3.Text = "Změna rozměrů smaže obrázek! , zadávejte prosím celá čisla v pixelech.";
             // 
-            // Form2
+            // InputDim
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 155);
@@ -102,7 +103,7 @@ namespace Malovani
             this.Controls.Add(this.textBoxH);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "InputDim";
             this.Text = "Změna rozměru";
             this.ResumeLayout(false);
             this.PerformLayout();

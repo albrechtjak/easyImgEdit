@@ -11,7 +11,6 @@ namespace Malovani
             InitializeComponent();
             comboBoxFont.SelectedIndex = 0;
             comboBoxSize.SelectedIndex = 0;
-
         }
         public Font Font1 { get; set; }
         public string Text1 { get; set; }
@@ -26,6 +25,5 @@ namespace Malovani
 
             Font1 = new Font(font, fontsize);
         }
-
     }
 }

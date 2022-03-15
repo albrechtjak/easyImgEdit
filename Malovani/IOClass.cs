@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Drawing2D;
+﻿using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Malovani
@@ -41,7 +35,7 @@ namespace Malovani
             }
         }
 
-        public static Bitmap OpenFile( Bitmap bm,PictureBox Pic)
+        public static Bitmap OpenFile(Bitmap bm, PictureBox Pic)
         {
             OpenFileDialog open = new OpenFileDialog
             {
@@ -54,14 +48,14 @@ namespace Malovani
                 if (bm.Width > Pic.Width || bm.Height > Pic.Height)
                 {
                     Pic.Image = bm;
-                    
+
 
                 }
                 else
                 {
                     Pic.Image = bm;
                     Pic.Size = new Size(bm.Width, bm.Height);
-                    
+
                 }
             }
             return bm;

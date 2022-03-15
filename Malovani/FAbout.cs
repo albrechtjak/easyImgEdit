@@ -1,20 +1,19 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Windows.Forms;
 
 namespace Malovani
 {
-    partial class FAbout : Form
+    internal partial class FAbout : Form
     {
         public FAbout()
         {
             InitializeComponent();
-            this.Text = String.Format("O aplikaci {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Verze {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = "Jakub Albrecht";
-            this.textBoxDescription.Text = "Jednoduchá aplikace na kreslení";
+            Text = string.Format("O aplikaci {0}", AssemblyTitle);
+            labelProductName.Text = AssemblyProduct;
+            labelVersion.Text = string.Format("Verze {0}", AssemblyVersion);
+            labelCopyright.Text = AssemblyCopyright;
+            labelCompanyName.Text = "Jakub Albrecht";
+            textBoxDescription.Text = "Jednoduchá aplikace na kreslení";
         }
 
         #region Přístup k atributům sestavení
@@ -36,13 +35,7 @@ namespace Malovani
             }
         }
 
-        public string AssemblyVersion
-        {
-            get
-            {
-                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            }
-        }
+        public string AssemblyVersion => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         public string AssemblyDescription
         {
@@ -96,5 +89,10 @@ namespace Malovani
             }
         }
         #endregion
+
+        private void OkButton_Click(object sender, System.EventArgs e)
+        {
+            Close();
+        }
     }
 }

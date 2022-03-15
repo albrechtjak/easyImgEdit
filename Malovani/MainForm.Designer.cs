@@ -31,18 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ToolPanel = new System.Windows.Forms.Panel();
-            this.BtnText = new System.Windows.Forms.Button();
+            this.button_Text = new System.Windows.Forms.Button();
             this.silaPera = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Velikost = new System.Windows.Forms.Label();
             this.tb = new System.Windows.Forms.TrackBar();
-            this.BtnColor = new System.Windows.Forms.Button();
-            this.BtnPaint = new System.Windows.Forms.Button();
-            this.BtnLine = new System.Windows.Forms.Button();
-            this.BtnRectangle = new System.Windows.Forms.Button();
-            this.BtnEllipse = new System.Windows.Forms.Button();
-            this.BtnEraser = new System.Windows.Forms.Button();
-            this.BtnPencil = new System.Windows.Forms.Button();
+            this.button_Color = new System.Windows.Forms.Button();
+            this.button_Fill = new System.Windows.Forms.Button();
+            this.button_Line = new System.Windows.Forms.Button();
+            this.button_Rect = new System.Windows.Forms.Button();
+            this.buttonElipse = new System.Windows.Forms.Button();
+            this.button_Rubb = new System.Windows.Forms.Button();
+            this.button_Pencil = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.souborToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,12 +77,12 @@
             this.Orange = new System.Windows.Forms.Button();
             this.Red = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.Pic = new System.Windows.Forms.PictureBox();
+            this.PBox = new System.Windows.Forms.PictureBox();
             this.ToolPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.ColorPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ToolPanel
@@ -90,43 +90,43 @@
             this.ToolPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ToolPanel.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ToolPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ToolPanel.Controls.Add(this.BtnText);
+            this.ToolPanel.Controls.Add(this.button_Text);
             this.ToolPanel.Controls.Add(this.silaPera);
             this.ToolPanel.Controls.Add(this.label1);
             this.ToolPanel.Controls.Add(this.Velikost);
             this.ToolPanel.Controls.Add(this.tb);
-            this.ToolPanel.Controls.Add(this.BtnColor);
-            this.ToolPanel.Controls.Add(this.BtnPaint);
-            this.ToolPanel.Controls.Add(this.BtnLine);
-            this.ToolPanel.Controls.Add(this.BtnRectangle);
-            this.ToolPanel.Controls.Add(this.BtnEllipse);
-            this.ToolPanel.Controls.Add(this.BtnEraser);
-            this.ToolPanel.Controls.Add(this.BtnPencil);
+            this.ToolPanel.Controls.Add(this.button_Color);
+            this.ToolPanel.Controls.Add(this.button_Fill);
+            this.ToolPanel.Controls.Add(this.button_Line);
+            this.ToolPanel.Controls.Add(this.button_Rect);
+            this.ToolPanel.Controls.Add(this.buttonElipse);
+            this.ToolPanel.Controls.Add(this.button_Rubb);
+            this.ToolPanel.Controls.Add(this.button_Pencil);
             this.ToolPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.ToolPanel.Location = new System.Drawing.Point(0, 24);
             this.ToolPanel.Name = "ToolPanel";
             this.ToolPanel.Size = new System.Drawing.Size(48, 725);
             this.ToolPanel.TabIndex = 0;
             // 
-            // BtnText
+            // button_Text
             // 
-            this.BtnText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnText.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnText.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnText.FlatAppearance.BorderSize = 0;
-            this.BtnText.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnText.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnText.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.BtnText.ForeColor = System.Drawing.Color.Black;
-            this.BtnText.Location = new System.Drawing.Point(3, 291);
-            this.BtnText.Name = "BtnText";
-            this.BtnText.Size = new System.Drawing.Size(35, 35);
-            this.BtnText.TabIndex = 11;
-            this.BtnText.Text = "A";
-            this.toolTip1.SetToolTip(this.BtnText, "Vyskreslení textu");
-            this.BtnText.UseVisualStyleBackColor = true;
-            this.BtnText.Click += new System.EventHandler(this.BtnText_Click);
+            this.button_Text.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Text.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Text.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_Text.FlatAppearance.BorderSize = 0;
+            this.button_Text.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button_Text.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button_Text.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Text.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_Text.ForeColor = System.Drawing.Color.Black;
+            this.button_Text.Location = new System.Drawing.Point(3, 291);
+            this.button_Text.Name = "button_Text";
+            this.button_Text.Size = new System.Drawing.Size(35, 35);
+            this.button_Text.TabIndex = 11;
+            this.button_Text.Text = "A";
+            this.toolTip1.SetToolTip(this.button_Text, "Vyskreslení textu");
+            this.button_Text.UseVisualStyleBackColor = true;
+            this.button_Text.Click += new System.EventHandler(this.Text_Click);
             // 
             // silaPera
             // 
@@ -146,7 +146,6 @@
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "pera:";
-       
             // 
             // Velikost
             // 
@@ -172,133 +171,133 @@
             this.tb.Value = 1;
             this.tb.ValueChanged += new System.EventHandler(this.Tb_ValueChanged);
             // 
-            // BtnColor
+            // button_Color
             // 
-            this.BtnColor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnColor.BackgroundImage")));
-            this.BtnColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnColor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnColor.FlatAppearance.BorderSize = 0;
-            this.BtnColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnColor.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnColor.Location = new System.Drawing.Point(3, 4);
-            this.BtnColor.Name = "BtnColor";
-            this.BtnColor.Size = new System.Drawing.Size(35, 35);
-            this.BtnColor.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.BtnColor, "Otevře okno pro výběr barvy.");
-            this.BtnColor.UseVisualStyleBackColor = true;
-            this.BtnColor.Click += new System.EventHandler(this.BtnColor_Click);
+            this.button_Color.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Color.BackgroundImage")));
+            this.button_Color.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Color.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Color.FlatAppearance.BorderSize = 0;
+            this.button_Color.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button_Color.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button_Color.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Color.ForeColor = System.Drawing.Color.Transparent;
+            this.button_Color.Location = new System.Drawing.Point(3, 4);
+            this.button_Color.Name = "button_Color";
+            this.button_Color.Size = new System.Drawing.Size(35, 35);
+            this.button_Color.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.button_Color, "Otevře okno pro výběr barvy.");
+            this.button_Color.UseVisualStyleBackColor = true;
+            this.button_Color.Click += new System.EventHandler(this.BtnColor_Click);
             // 
-            // BtnPaint
+            // button_Fill
             // 
-            this.BtnPaint.BackColor = System.Drawing.Color.Transparent;
-            this.BtnPaint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnPaint.BackgroundImage")));
-            this.BtnPaint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnPaint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPaint.FlatAppearance.BorderSize = 0;
-            this.BtnPaint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnPaint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnPaint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPaint.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnPaint.Location = new System.Drawing.Point(3, 250);
-            this.BtnPaint.Name = "BtnPaint";
-            this.BtnPaint.Size = new System.Drawing.Size(35, 35);
-            this.BtnPaint.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.BtnPaint, "Výplň barvou");
-            this.BtnPaint.UseVisualStyleBackColor = false;
-            this.BtnPaint.Click += new System.EventHandler(this.BtnPaint_Click);
+            this.button_Fill.BackColor = System.Drawing.Color.Transparent;
+            this.button_Fill.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Fill.BackgroundImage")));
+            this.button_Fill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Fill.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Fill.FlatAppearance.BorderSize = 0;
+            this.button_Fill.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button_Fill.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button_Fill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Fill.ForeColor = System.Drawing.Color.Transparent;
+            this.button_Fill.Location = new System.Drawing.Point(3, 250);
+            this.button_Fill.Name = "button_Fill";
+            this.button_Fill.Size = new System.Drawing.Size(35, 35);
+            this.button_Fill.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.button_Fill, "Výplň barvou");
+            this.button_Fill.UseVisualStyleBackColor = false;
+            this.button_Fill.Click += new System.EventHandler(this.Filler_Click);
             // 
-            // BtnLine
+            // button_Line
             // 
-            this.BtnLine.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnLine.BackgroundImage")));
-            this.BtnLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnLine.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnLine.FlatAppearance.BorderSize = 0;
-            this.BtnLine.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnLine.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLine.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnLine.Location = new System.Drawing.Point(3, 127);
-            this.BtnLine.Name = "BtnLine";
-            this.BtnLine.Size = new System.Drawing.Size(35, 35);
-            this.BtnLine.TabIndex = 4;
-            this.toolTip1.SetToolTip(this.BtnLine, "Kreslení čáry");
-            this.BtnLine.UseVisualStyleBackColor = true;
-            this.BtnLine.Click += new System.EventHandler(this.BtnLine_Click);
+            this.button_Line.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Line.BackgroundImage")));
+            this.button_Line.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Line.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Line.FlatAppearance.BorderSize = 0;
+            this.button_Line.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button_Line.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button_Line.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Line.ForeColor = System.Drawing.Color.Transparent;
+            this.button_Line.Location = new System.Drawing.Point(3, 127);
+            this.button_Line.Name = "button_Line";
+            this.button_Line.Size = new System.Drawing.Size(35, 35);
+            this.button_Line.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.button_Line, "Kreslení čáry");
+            this.button_Line.UseVisualStyleBackColor = true;
+            this.button_Line.Click += new System.EventHandler(this.Line_Click);
             // 
-            // BtnRectangle
+            // button_Rect
             // 
-            this.BtnRectangle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnRectangle.BackgroundImage")));
-            this.BtnRectangle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnRectangle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnRectangle.FlatAppearance.BorderSize = 0;
-            this.BtnRectangle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnRectangle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnRectangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRectangle.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnRectangle.Location = new System.Drawing.Point(3, 209);
-            this.BtnRectangle.Name = "BtnRectangle";
-            this.BtnRectangle.Size = new System.Drawing.Size(35, 35);
-            this.BtnRectangle.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.BtnRectangle, "Kreslení obdélníku");
-            this.BtnRectangle.UseVisualStyleBackColor = true;
-            this.BtnRectangle.Click += new System.EventHandler(this.BtnRectangle_Click);
+            this.button_Rect.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Rect.BackgroundImage")));
+            this.button_Rect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Rect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Rect.FlatAppearance.BorderSize = 0;
+            this.button_Rect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button_Rect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button_Rect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Rect.ForeColor = System.Drawing.Color.Transparent;
+            this.button_Rect.Location = new System.Drawing.Point(3, 209);
+            this.button_Rect.Name = "button_Rect";
+            this.button_Rect.Size = new System.Drawing.Size(35, 35);
+            this.button_Rect.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.button_Rect, "Kreslení obdélníku");
+            this.button_Rect.UseVisualStyleBackColor = true;
+            this.button_Rect.Click += new System.EventHandler(this.Rect_Click);
             // 
-            // BtnEllipse
+            // buttonElipse
             // 
-            this.BtnEllipse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnEllipse.BackgroundImage")));
-            this.BtnEllipse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnEllipse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEllipse.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnEllipse.FlatAppearance.BorderSize = 0;
-            this.BtnEllipse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnEllipse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnEllipse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEllipse.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnEllipse.Location = new System.Drawing.Point(3, 168);
-            this.BtnEllipse.Name = "BtnEllipse";
-            this.BtnEllipse.Size = new System.Drawing.Size(35, 35);
-            this.BtnEllipse.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.BtnEllipse, "Kreslení elispy");
-            this.BtnEllipse.UseVisualStyleBackColor = true;
-            this.BtnEllipse.Click += new System.EventHandler(this.BtnEllipse_Click);
+            this.buttonElipse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonElipse.BackgroundImage")));
+            this.buttonElipse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonElipse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonElipse.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonElipse.FlatAppearance.BorderSize = 0;
+            this.buttonElipse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.buttonElipse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.buttonElipse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonElipse.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonElipse.Location = new System.Drawing.Point(3, 168);
+            this.buttonElipse.Name = "buttonElipse";
+            this.buttonElipse.Size = new System.Drawing.Size(35, 35);
+            this.buttonElipse.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.buttonElipse, "Kreslení elispy");
+            this.buttonElipse.UseVisualStyleBackColor = true;
+            this.buttonElipse.Click += new System.EventHandler(this.Ellipse_Click);
             // 
-            // BtnEraser
+            // button_Rubb
             // 
-            this.BtnEraser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnEraser.BackgroundImage")));
-            this.BtnEraser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnEraser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnEraser.FlatAppearance.BorderSize = 0;
-            this.BtnEraser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnEraser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnEraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEraser.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnEraser.Location = new System.Drawing.Point(3, 86);
-            this.BtnEraser.Name = "BtnEraser";
-            this.BtnEraser.Size = new System.Drawing.Size(35, 35);
-            this.BtnEraser.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.BtnEraser, "Guma");
-            this.BtnEraser.UseVisualStyleBackColor = true;
-            this.BtnEraser.Click += new System.EventHandler(this.BtnEraser_Click);
+            this.button_Rubb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Rubb.BackgroundImage")));
+            this.button_Rubb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Rubb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Rubb.FlatAppearance.BorderSize = 0;
+            this.button_Rubb.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button_Rubb.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button_Rubb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Rubb.ForeColor = System.Drawing.Color.Transparent;
+            this.button_Rubb.Location = new System.Drawing.Point(3, 86);
+            this.button_Rubb.Name = "button_Rubb";
+            this.button_Rubb.Size = new System.Drawing.Size(35, 35);
+            this.button_Rubb.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.button_Rubb, "Guma");
+            this.button_Rubb.UseVisualStyleBackColor = true;
+            this.button_Rubb.Click += new System.EventHandler(this.Rubb_Click);
             // 
-            // BtnPencil
+            // button_Pencil
             // 
-            this.BtnPencil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnPencil.BackgroundImage")));
-            this.BtnPencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnPencil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPencil.FlatAppearance.BorderSize = 0;
-            this.BtnPencil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.BtnPencil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnPencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPencil.ForeColor = System.Drawing.Color.Transparent;
-            this.BtnPencil.Location = new System.Drawing.Point(3, 45);
-            this.BtnPencil.Name = "BtnPencil";
-            this.BtnPencil.Size = new System.Drawing.Size(35, 35);
-            this.BtnPencil.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.BtnPencil, "Kreslení tužkou");
-            this.BtnPencil.UseVisualStyleBackColor = true;
-            this.BtnPencil.Click += new System.EventHandler(this.BtnPencil_Click);
+            this.button_Pencil.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_Pencil.BackgroundImage")));
+            this.button_Pencil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Pencil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Pencil.FlatAppearance.BorderSize = 0;
+            this.button_Pencil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button_Pencil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button_Pencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Pencil.ForeColor = System.Drawing.Color.Transparent;
+            this.button_Pencil.Location = new System.Drawing.Point(3, 45);
+            this.button_Pencil.Name = "button_Pencil";
+            this.button_Pencil.Size = new System.Drawing.Size(35, 35);
+            this.button_Pencil.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.button_Pencil, "Kreslení tužkou");
+            this.button_Pencil.UseVisualStyleBackColor = true;
+            this.button_Pencil.Click += new System.EventHandler(this.Pen_Click);
             // 
             // menuStrip1
             // 
@@ -328,28 +327,32 @@
             // NewToolStripMenuItem
             // 
             this.NewToolStripMenuItem.Name = "NewToolStripMenuItem";
-            this.NewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.NewToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.NewToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.NewToolStripMenuItem.Text = "Nový";
             this.NewToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
             // zpětToolStripMenuItem
             // 
             this.zpětToolStripMenuItem.Name = "zpětToolStripMenuItem";
-            this.zpětToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zpětToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.zpětToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.zpětToolStripMenuItem.Text = "Zpět";
             this.zpětToolStripMenuItem.Click += new System.EventHandler(this.ZpetToolStripMenuItem_Click);
             // 
             // OpenToolStripMenuItem
             // 
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OpenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.OpenToolStripMenuItem.Text = "Otevřít";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.SaveToolStripMenuItem.Text = "Uložit";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
@@ -610,23 +613,23 @@
             this.Red.UseVisualStyleBackColor = false;
             this.Red.Click += new System.EventHandler(this.Red_Click);
             // 
-            // Pic
+            // PBox
             // 
-            this.Pic.BackColor = System.Drawing.Color.White;
-            this.Pic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Pic.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.Pic.Location = new System.Drawing.Point(48, 24);
-            this.Pic.MaximumSize = new System.Drawing.Size(3000, 2000);
-            this.Pic.MinimumSize = new System.Drawing.Size(100, 100);
-            this.Pic.Name = "Pic";
-            this.Pic.Size = new System.Drawing.Size(1301, 725);
-            this.Pic.TabIndex = 1;
-            this.Pic.TabStop = false;
-            this.Pic.Paint += new System.Windows.Forms.PaintEventHandler(this.Pic_Paint);
-            this.Pic.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseClick);
-            this.Pic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseDown);
-            this.Pic.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseMove);
-            this.Pic.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseUp);
+            this.PBox.BackColor = System.Drawing.Color.White;
+            this.PBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PBox.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.PBox.Location = new System.Drawing.Point(48, 24);
+            this.PBox.MaximumSize = new System.Drawing.Size(3000, 2000);
+            this.PBox.MinimumSize = new System.Drawing.Size(100, 100);
+            this.PBox.Name = "PBox";
+            this.PBox.Size = new System.Drawing.Size(1301, 725);
+            this.PBox.TabIndex = 1;
+            this.PBox.TabStop = false;
+            this.PBox.Paint += new System.Windows.Forms.PaintEventHandler(this.PBox_Draw);
+            this.PBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseClick);
+            this.PBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PBox_MouseDown);
+            this.PBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PBox_MouseMove);
+            this.PBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseUp);
             // 
             // MainForm
             // 
@@ -636,15 +639,15 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.ColorPanel);
-            this.Controls.Add(this.Pic);
+            this.Controls.Add(this.PBox);
             this.Controls.Add(this.ToolPanel);
             this.Controls.Add(this.menuStrip1);
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Malování";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ToolPanel.ResumeLayout(false);
             this.ToolPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb)).EndInit();
@@ -652,7 +655,7 @@
             this.menuStrip1.PerformLayout();
             this.ColorPanel.ResumeLayout(false);
             this.ColorPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -661,14 +664,14 @@
         #endregion
 
         private System.Windows.Forms.Panel ToolPanel;
-        private System.Windows.Forms.Button BtnColor;
-        private System.Windows.Forms.Button BtnPaint;
-        private System.Windows.Forms.Button BtnLine;
-        private System.Windows.Forms.Button BtnRectangle;
-        private System.Windows.Forms.Button BtnEllipse;
-        private System.Windows.Forms.Button BtnEraser;
-        private System.Windows.Forms.Button BtnPencil;
-        private System.Windows.Forms.PictureBox Pic;
+        private System.Windows.Forms.Button button_Color;
+        private System.Windows.Forms.Button button_Fill;
+        private System.Windows.Forms.Button button_Line;
+        private System.Windows.Forms.Button button_Rect;
+        private System.Windows.Forms.Button buttonElipse;
+        private System.Windows.Forms.Button button_Rubb;
+        private System.Windows.Forms.Button button_Pencil;
+        private System.Windows.Forms.PictureBox PBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem souborToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem;
@@ -705,7 +708,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label silaPera;
-        private System.Windows.Forms.Button BtnText;
+        private System.Windows.Forms.Button button_Text;
         private System.Windows.Forms.Label labelPozice;
         private System.Windows.Forms.ToolStripMenuItem zpětToolStripMenuItem;
     }

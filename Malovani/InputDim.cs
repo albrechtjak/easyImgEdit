@@ -20,8 +20,8 @@ namespace Malovani
 
             try
             {
-                SetHeight = Int32.Parse(h);
-                SetWidth = Int32.Parse(w);
+                SetHeight = int.Parse(h);
+                SetWidth = int.Parse(w);
             }
             catch (FormatException)
             {
