@@ -274,7 +274,6 @@ namespace Malovani
         {
             Option = 5;
         }
-
         private void Filler_Click(object sender, EventArgs e)
         {
             Option = 6;
@@ -348,8 +347,7 @@ namespace Malovani
 
         private void Black_Click(object sender, EventArgs e)
         {
-            p.Color = Color.Black;
-            currColor.BackColor = p.Color;
+            ChangeColor(Color.Black);
         }
         private void ChangeColor(Color b)
         {
@@ -377,6 +375,11 @@ namespace Malovani
 
         }
 
+        private void KonecToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void SouborToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
             if (btmBack == null)
@@ -394,8 +397,7 @@ namespace Malovani
         private void BtnColor_Click(object sender, EventArgs e)
         {
             cd.ShowDialog();
-            p.Color = cd.Color;
-            currColor.BackColor = p.Color;
+            ChangeColor(cd.Color);
         }
 
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)

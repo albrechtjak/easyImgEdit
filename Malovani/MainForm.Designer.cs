@@ -78,6 +78,7 @@
             this.Red = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.PBox = new System.Windows.Forms.PictureBox();
+            this.konecToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -318,7 +319,8 @@
             this.NewToolStripMenuItem,
             this.zpětToolStripMenuItem,
             this.OpenToolStripMenuItem,
-            this.SaveToolStripMenuItem});
+            this.SaveToolStripMenuItem,
+            this.konecToolStripMenuItem});
             this.souborToolStripMenuItem.Name = "souborToolStripMenuItem";
             this.souborToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.souborToolStripMenuItem.Text = "Soubor";
@@ -328,7 +330,7 @@
             // 
             this.NewToolStripMenuItem.Name = "NewToolStripMenuItem";
             this.NewToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.NewToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.NewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.NewToolStripMenuItem.Text = "Nový";
             this.NewToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
@@ -336,7 +338,7 @@
             // 
             this.zpětToolStripMenuItem.Name = "zpětToolStripMenuItem";
             this.zpětToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.zpětToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.zpětToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zpětToolStripMenuItem.Text = "Zpět";
             this.zpětToolStripMenuItem.Click += new System.EventHandler(this.ZpetToolStripMenuItem_Click);
             // 
@@ -344,7 +346,7 @@
             // 
             this.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem";
             this.OpenToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.OpenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.OpenToolStripMenuItem.Text = "Otevřít";
             this.OpenToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
@@ -352,7 +354,7 @@
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
             this.SaveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SaveToolStripMenuItem.Text = "Uložit";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
@@ -631,6 +633,13 @@
             this.PBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PBox_MouseMove);
             this.PBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseUp);
             // 
+            // konecToolStripMenuItem
+            // 
+            this.konecToolStripMenuItem.Name = "konecToolStripMenuItem";
+            this.konecToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.konecToolStripMenuItem.Text = "Konec";
+            this.konecToolStripMenuItem.Click += new System.EventHandler(this.KonecToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -711,6 +720,7 @@
         private System.Windows.Forms.Button button_Text;
         private System.Windows.Forms.Label labelPozice;
         private System.Windows.Forms.ToolStripMenuItem zpětToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem konecToolStripMenuItem;
     }
 }
 
