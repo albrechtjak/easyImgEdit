@@ -21,9 +21,13 @@ namespace Malovani
         private Rectangle screeensize = Screen.PrimaryScreen.WorkingArea;
         private Color NC;
         private readonly ColorDialog cd = new ColorDialog();
+
         public MainForm()
         {
             InitializeComponent();
+
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
 
             PBox.Height = screeensize.Height - 50;
             PBox.Width = screeensize.Width - 50;
@@ -77,28 +81,26 @@ namespace Malovani
 
             sizX = curX - dwnX;
             sizY = curY - dwnY;
-            if (Option == 3)
+            switch (Option)
             {
-                g.DrawEllipse(p, dwnX, dwnY, sizX, sizY);
-            }
-            if (Option == 4)
-            {
-                g.DrawRectangle(p, dwnX, dwnY, sizX, sizY);
-            }
-            if (Option == 5)
-            {
-                g.DrawLine(p, dwnX, dwnY, curX, curY);
-            }
-            if (Option == 7)
-            {
-                Rectangle inputrect = new Rectangle(dwnX, dwnY, sizX, sizY);
-                Brush brush = new SolidBrush(p.Color);
+                case 3:
+                    g.DrawEllipse(p, dwnX, dwnY, sizX, sizY);
+                    break;
+                case 4:
+                    g.DrawRectangle(p, dwnX, dwnY, sizX, sizY);
+                    break;
+                case 5:
+                    g.DrawLine(p, dwnX, dwnY, curX, curY);
+                    break;
+                case 7:
+                    Rectangle inputrect = new Rectangle(dwnX, dwnY, sizX, sizY);
+                    Brush brush = new SolidBrush(p.Color);
 
-                InputFormString inputfrm = new InputFormString();
-                inputfrm.ShowDialog();
+                    InputFormString inputfrm = new InputFormString();
+                    inputfrm.ShowDialog();
 
-                g.DrawString(inputfrm.Text1, inputfrm.Font1, brush, inputrect);
-
+                    g.DrawString(inputfrm.Text1, inputfrm.Font1, brush, inputrect);
+                    break;
             }
         }
         private void PBox_Draw(object sender, PaintEventArgs e)
@@ -106,22 +108,18 @@ namespace Malovani
             Graphics g = e.Graphics;
             if (draw)
             {
-                if (Option == 3)
+                switch (Option)
                 {
-                    g.DrawEllipse(p, dwnX, dwnY, sizX, sizY);
-                }
-
-                if (Option == 4)
-                {
-                    g.DrawRectangle(p, dwnX, dwnY, sizX, sizY);
-                }
-                if (Option == 5)
-                {
-                    g.DrawLine(p, dwnX, dwnY, curX, curY);
-                }
-                if (Option == 7)
-                {
-                    g.DrawRectangle(p, dwnX, dwnY, sizX, sizY);
+                    case 3:
+                        g.DrawEllipse(p, dwnX, dwnY, sizX, sizY);
+                        break;
+                    case 4:
+                    case 7:
+                        g.DrawRectangle(p, dwnX, dwnY, sizX, sizY);
+                        break;
+                    case 5:
+                        g.DrawLine(p, dwnX, dwnY, curX, curY);
+                        break;
                 }
             }
         }
