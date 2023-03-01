@@ -48,14 +48,11 @@ namespace Malovani
                 if (bm.Width > Pic.Width || bm.Height > Pic.Height)
                 {
                     Pic.Image = bm;
-
-
                 }
                 else
                 {
                     Pic.Image = bm;
                     Pic.Size = new Size(bm.Width, bm.Height);
-
                 }
             }
             return bm;
