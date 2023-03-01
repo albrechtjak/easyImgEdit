@@ -12,12 +12,12 @@ namespace Malovani
             comboBoxFont.SelectedIndex = 0;
             comboBoxSize.SelectedIndex = 0;
         }
+
         public Font Font1 { get; set; }
         public string Text1 { get; set; }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
             Text1 = textBox.Text;
             string font = comboBoxFont.Text;
             string fontsizeT = comboBoxSize.Text;

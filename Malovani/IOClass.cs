@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace Malovani
 {
-    internal class IOClass
+    internal class IoClass
     {
-        public static void Save(Bitmap bm, PictureBox Pic)
+        public static void Save(Bitmap bm, PictureBox pic)
         {
             SaveFileDialog sfd = new SaveFileDialog
             {
@@ -16,7 +16,7 @@ namespace Malovani
             };
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                Bitmap btm = bm.Clone(new Rectangle(0, 0, Pic.Width, Pic.Height), bm.PixelFormat);
+                Bitmap btm = bm.Clone(new Rectangle(0, 0, pic.Width, pic.Height), bm.PixelFormat);
                 if (sfd.FileName.EndsWith(".jpg"))
                 {
                     btm.Save(sfd.FileName, ImageFormat.Jpeg);
@@ -35,7 +35,7 @@ namespace Malovani
             }
         }
 
-        public static Bitmap OpenFile(Bitmap bm, PictureBox Pic)
+        public static Bitmap OpenFile(Bitmap bm, PictureBox pic)
         {
             OpenFileDialog open = new OpenFileDialog
             {
@@ -45,14 +45,14 @@ namespace Malovani
             if (open.ShowDialog() == DialogResult.OK)
             {
                 bm = new Bitmap(open.FileName);
-                if (bm.Width > Pic.Width || bm.Height > Pic.Height)
+                if (bm.Width > pic.Width || bm.Height > pic.Height)
                 {
-                    Pic.Image = bm;
+                    pic.Image = bm;
                 }
                 else
                 {
-                    Pic.Image = bm;
-                    Pic.Size = new Size(bm.Width, bm.Height);
+                    pic.Image = bm;
+                    pic.Size = new Size(bm.Width, bm.Height);
                 }
             }
             return bm;

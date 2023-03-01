@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31402.337
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Malovani", "Malovani\Malovani.csproj", "{9040DE38-32E8-414C-8272-70F80AAF797C}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Install_Malovani", "Install_Malovani\Install_Malovani.vdproj", "{96E32171-A860-404F-B7CC-03B488D6F69E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{9040DE38-32E8-414C-8272-70F80AAF797C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9040DE38-32E8-414C-8272-70F80AAF797C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9040DE38-32E8-414C-8272-70F80AAF797C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96E32171-A860-404F-B7CC-03B488D6F69E}.Debug|Any CPU.ActiveCfg = Debug
+		{96E32171-A860-404F-B7CC-03B488D6F69E}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

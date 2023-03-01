@@ -13,12 +13,12 @@ namespace Malovani
         private bool draw = false;
         private Point point1, point2;
         private readonly Pen p = new Pen(Color.Black, 1);
-        private readonly Pen Eraser = new Pen(Color.White, 10);
-        private int Option;
+        private readonly Pen eraser = new Pen(Color.White, 10);
+        private int option;
         private Bitmap btmBack = null;
         private int curX, curY, sizX, sizY, dwnX, dwnY;
-        private Rectangle screeensize = Screen.PrimaryScreen.WorkingArea;
-        private Color NC;
+        private Rectangle screnSize = Screen.PrimaryScreen.WorkingArea;
+        private Color nc;
         private readonly ColorDialog cd = new ColorDialog();
 
         public MainForm()
@@ -26,18 +26,19 @@ namespace Malovani
             InitializeComponent();
 
             this.DoubleBuffered = true;
-            this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
+            this.SetStyle(
+                ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer,
+                true);
 
-            PBox.Height = screeensize.Height - 50;
-            PBox.Width = screeensize.Width - 50;
+            PBox.Height = screnSize.Height - 50;
+            PBox.Width = screnSize.Width - 50;
             bm = new Bitmap(PBox.Width, PBox.Height);
             g = Graphics.FromImage(bm);
             g.Clear(Color.White);
             PBox.Image = bm;
 
             g.SmoothingMode = SmoothingMode.HighQuality;
-            Option = 1;
-
+            option = 1;
         }
 
         private void PBox_MouseDown(object sender, MouseEventArgs e)
@@ -47,25 +48,27 @@ namespace Malovani
             dwnX = e.X;
             dwnY = e.Y;
             CloneAndEnable();
-
         }
+
         private void PBox_MouseMove(object sender, MouseEventArgs e)
         {
             if (draw)
             {
-                if (Option == 1)
+                if (option == 1)
                 {
                     point1 = e.Location;
                     g.DrawLine(p, point1, point2);
                     point2 = point1;
                 }
-                if (Option == 2)
+
+                if (option == 2)
                 {
                     point1 = e.Location;
-                    g.DrawLine(Eraser, point1, point2);
+                    g.DrawLine(eraser, point1, point2);
                     point2 = point1;
                 }
             }
+
             PBox.Refresh();
             labelPozice.Text = "Pozice kurzoru " + e.Location.ToString();
             curX = e.X;
@@ -80,7 +83,7 @@ namespace Malovani
 
             sizX = curX - dwnX;
             sizY = curY - dwnY;
-            switch (Option)
+            switch (option)
             {
                 case 3:
                     g.DrawEllipse(p, dwnX, dwnY, sizX, sizY);
@@ -102,12 +105,13 @@ namespace Malovani
                     break;
             }
         }
+
         private void PBox_Draw(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
             if (draw)
             {
-                switch (Option)
+                switch (option)
                 {
                     case 3:
                         g.DrawEllipse(p, dwnX, dwnY, sizX, sizY);
@@ -122,6 +126,7 @@ namespace Malovani
                 }
             }
         }
+
         private void SetDimPic(object sender, EventArgs e)
         {
             InputDim frm = new InputDim();
@@ -135,56 +140,63 @@ namespace Malovani
             PBox.Image = bm;
         }
 
-        private void PixelControl(Bitmap bm, Stack<Point> sp, int x, int y, Color OC, Color NC)
+        private void PixelControl(Bitmap bm, Stack<Point> sp, int x, int y, Color oc, Color nc)
         {
             Color c = bm.GetPixel(x, y);
-            if (c == OC)
+            if (c == oc)
             {
                 sp.Push(new Point(x, y));
-                bm.SetPixel(x, y, NC);
+                bm.SetPixel(x, y, nc);
             }
         }
 
 
-        public void Fill(Bitmap bm, int x, int y, Color NC)
+        public void Fill(Bitmap bm, int x, int y, Color nc)
         {
-            Color OC = bm.GetPixel(x, y);
+            Color oc = bm.GetPixel(x, y);
             Stack<Point> pixStack = new Stack<Point>();
             pixStack.Push(new Point(x, y));
-            bm.SetPixel(x, y, NC);
-            if (OC == NC) { return; }
+            bm.SetPixel(x, y, nc);
+            if (oc == nc)
+            {
+                return;
+            }
 
             while (pixStack.Count > 0)
             {
                 Point bod = pixStack.Pop();
                 if (bod.X > 0 && bod.Y > 0 && bod.X < bm.Width - 1 && bod.Y < bm.Height - 1)
                 {
-                    PixelControl(bm, pixStack, bod.X - 1, bod.Y, OC, NC);
-                    PixelControl(bm, pixStack, bod.X, bod.Y - 1, OC, NC);
-                    PixelControl(bm, pixStack, bod.X + 1, bod.Y, OC, NC);
-                    PixelControl(bm, pixStack, bod.X, bod.Y + 1, OC, NC);
+                    PixelControl(bm, pixStack, bod.X - 1, bod.Y, oc, nc);
+                    PixelControl(bm, pixStack, bod.X, bod.Y - 1, oc, nc);
+                    PixelControl(bm, pixStack, bod.X + 1, bod.Y, oc, nc);
+                    PixelControl(bm, pixStack, bod.X, bod.Y + 1, oc, nc);
                 }
             }
         }
+
         private static Point PointForFill(PictureBox pic, Point bod)
         {
             float pntX = 1f * pic.Width / pic.Width;
             float pntY = 1f * pic.Height / pic.Height;
             return new Point((int)(bod.X * pntX), (int)(bod.Y * pntY));
         }
+
         private void Pic_MouseClick(object sender, MouseEventArgs e)
         {
-            if (Option == 6)
+            if (option == 6)
             {
                 Point pnt = PointForFill(PBox, e.Location);
-                Fill(bm, pnt.X, pnt.Y, NC);
+                Fill(bm, pnt.X, pnt.Y, nc);
             }
         }
+
         private void Tb_ValueChanged(object sender, EventArgs e)
         {
             p.Width = tb.Value;
             silaPera.Text = tb.Value.ToString();
         }
+
         private void CernobilyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CloneAndEnable();
@@ -199,6 +211,7 @@ namespace Malovani
                 }
             }
         }
+
         private void NegativToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CloneAndEnable();
@@ -211,8 +224,8 @@ namespace Malovani
                     bm.SetPixel(y, x, newC);
                 }
             }
-
         }
+
         private void SepieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CloneAndEnable();
@@ -241,6 +254,7 @@ namespace Malovani
                 }
             }
         }
+
         private void CloneAndEnable()
         {
             btmBack = bm.Clone(new Rectangle(0, 0, PBox.Width, PBox.Height), bm.PixelFormat);
@@ -249,36 +263,37 @@ namespace Malovani
 
         private void Pen_Click(object sender, EventArgs e)
         {
-            Option = 1;
+            option = 1;
         }
 
         private void Rubb_Click(object sender, EventArgs e)
         {
-            Option = 2;
+            option = 2;
         }
 
         private void Ellipse_Click(object sender, EventArgs e)
         {
-            Option = 3;
+            option = 3;
         }
 
         private void Rect_Click(object sender, EventArgs e)
         {
-            Option = 4;
+            option = 4;
         }
 
         private void Line_Click(object sender, EventArgs e)
         {
-            Option = 5;
+            option = 5;
         }
+
         private void Filler_Click(object sender, EventArgs e)
         {
-            Option = 6;
+            option = 6;
         }
 
         private void Text_Click(object sender, EventArgs e)
         {
-            Option = 7;
+            option = 7;
         }
 
         private void VlevoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -346,13 +361,13 @@ namespace Malovani
         {
             ChangeColor(Color.Black);
         }
+
         private void ChangeColor(Color b)
         {
             p.Color = b;
             currColor.BackColor = b;
-            NC = b;
+            nc = b;
         }
-
 
 
         private void ZpetToolStripMenuItem_Click(object sender, EventArgs e)
@@ -360,7 +375,6 @@ namespace Malovani
             if (btmBack == null)
             {
                 zpětToolStripMenuItem.Enabled = false;
-
             }
             else
             {
@@ -369,7 +383,6 @@ namespace Malovani
                 g = Graphics.FromImage(bm);
                 btmBack = null;
             }
-
         }
 
         private void KonecToolStripMenuItem_Click(object sender, EventArgs e)
@@ -399,25 +412,24 @@ namespace Malovani
 
         private void NewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PBox.Height = screeensize.Height - 50;
-            PBox.Width = screeensize.Width - 50;
+            PBox.Height = screnSize.Height - 50;
+            PBox.Width = screnSize.Width - 50;
             bm = new Bitmap(PBox.Width, PBox.Height);
             g = Graphics.FromImage(bm);
             g.Clear(Color.White);
             PBox.Image = bm;
-            Option = 1;
-
+            option = 1;
         }
+
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bm = IOClass.OpenFile(bm, PBox);
+            bm = IoClass.OpenFile(bm, PBox);
             g = Graphics.FromImage(bm);
-
         }
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IOClass.Save(bm, PBox);
+            IoClass.Save(bm, PBox);
         }
     }
 }
