@@ -12,7 +12,7 @@ Tuto aplikaci můžete nainstalovat stažením instalačního souboru MSI a jeho
 
 Instalace pomocí MSI
 
-Stáhněte si nejnovější instalační soubor MSI ze stránky s verzemi.
+Stáhněte si nejnovější instalační soubor MSI ze stránky https://sourceforge.net/projects/malovani
 Dvakrát klikněte na stažený soubor a spusťte instalační proces.
 Instalaci dokončete podle pokynů na obrazovce.
 
@@ -22,6 +22,7 @@ Sestavení ze zdrojového kódu
 Naklonujte úložiště do místního počítače.
 Otevřete soubor řešení v aplikaci Visual Studio.
 Sestavte řešení pomocí možnosti nabídky "Sestavit".
+https://github.com/albrechtjak/Malovani
 
 
 Použití
@@ -55,7 +56,7 @@ You can install this application by downloading the MSI installer file and runni
 
 Installing via MSI
 
-Download the latest MSI installer file from the releases page.
+Download the latest MSI installer file from https://sourceforge.net/projects/malovani
 Double-click the downloaded file to start the installation process.
 Follow the on-screen instructions to complete the installation.
 
@@ -65,6 +66,7 @@ Building from Source
 Clone the repository to your local machine.
 Open the solution file in Visual Studio.
 Build the solution using the "Build" menu option.
+https://github.com/albrechtjak/Malovani
 
 
 Usage
