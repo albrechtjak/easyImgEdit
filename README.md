@@ -2,7 +2,7 @@ CS
 _______________________________________
 Jednoduchý grafický editor v jazyce C#
 
-Jedná se o základní grafický editor napsaný v jazyce C#  s pomocí WinForms. Tato aplikace umožňuje kreslit a několik typů tvarů včetně obdélníků, kružnic a čar.
+Jedná se o základní grafický editor napsaný v jazyce C#  s pomocí WinForms. Tato aplikace umožňuje kreslit a několik drůhů tvarů včetně obdélníků, kružnic a čar.
 
 
 Instalace
