@@ -39,6 +39,8 @@ Licence
 Tato aplikace je licencována pod licencí MIT. Další podrobnosti naleznete v souboru LICENSE.
 
 
+
+
 EN
 _________________________________________
 Basic graphical editor in C#
