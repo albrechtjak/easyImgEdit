@@ -1,5 +1,6 @@
 CS
-Jednoduchá grafický editor v jazyce C#
+_______________________________________
+Jednoduchý grafický editor v jazyce C#
 Jedná se o základní grafický editor napsaný v jazyce C#  s pomocí WinForms. Tato aplikace umožňuje kreslit a několik typů tvarů včetně obdélníků, kružnic a čar.
 
 Instalace
@@ -24,10 +25,10 @@ Chcete-li výkres uložit, vyberte z nabídky "Soubor" možnost "Uložit". Poté
 Licence
 Tato aplikace je licencována pod licencí MIT. Další podrobnosti naleznete v souboru LICENSE.
 
-_________________________________________
-EN
 
-Graphical Editor in C#
+EN
+_________________________________________
+Basic graphical editor in C#
 This is a basic graphical editor implemented in C# using WinForms. This application allows you to draw and edit shapes on a canvas, and supports several common shape types including rectangles, circles, and lines.
 
 Installation
