@@ -2,7 +2,7 @@ CS
 _______________________________________
 Jednoduchý grafický editor v jazyce C#
 
-Jedná se o jednoduchý grafický editor napsaný v jazyce C#  s pomocí WinForms. Tato aplikace umožňuje kreslit od ruky, vybarvovat tvary, přidávat text do orzázku, nebo aplikovat různé filtry
+Jedná se o jednoduchý grafický editor napsaný v jazyce C#  s pomocí WinForms. Tato aplikace umožňuje kreslit od ruky, vybarvovat tvary, přidávat text do obrázku, nebo aplikovat různé filtry
 
 
 Instalace
