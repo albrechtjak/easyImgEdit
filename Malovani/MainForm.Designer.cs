@@ -49,6 +49,7 @@
             this.zpětToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.konecToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nastaveníToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SetDimObrazkuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.umísteníPaneluNástojůToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +79,6 @@
             this.Red = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.PBox = new System.Windows.Forms.PictureBox();
-            this.konecToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tb)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -358,6 +358,13 @@
             this.SaveToolStripMenuItem.Text = "Uložit";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
+            // konecToolStripMenuItem
+            // 
+            this.konecToolStripMenuItem.Name = "konecToolStripMenuItem";
+            this.konecToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.konecToolStripMenuItem.Text = "Konec";
+            this.konecToolStripMenuItem.Click += new System.EventHandler(this.KonecToolStripMenuItem_Click);
+            // 
             // nastaveníToolStripMenuItem
             // 
             this.nastaveníToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -633,13 +640,6 @@
             this.PBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PBox_MouseMove);
             this.PBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseUp);
             // 
-            // konecToolStripMenuItem
-            // 
-            this.konecToolStripMenuItem.Name = "konecToolStripMenuItem";
-            this.konecToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.konecToolStripMenuItem.Text = "Konec";
-            this.konecToolStripMenuItem.Click += new System.EventHandler(this.KonecToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -648,9 +648,9 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.ColorPanel);
-            this.Controls.Add(this.PBox);
             this.Controls.Add(this.ToolPanel);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.PBox);
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";

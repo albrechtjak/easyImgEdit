@@ -133,6 +133,7 @@ namespace Malovani
             frm.ShowDialog();
             PBox.Dock = DockStyle.None;
             PBox.Size = new Size(frm.SetWidth, frm.SetHeight);
+            PBox.Size = new Size(frm.SetWidth, frm.SetHeight);
 
             bm = new Bitmap(PBox.Width, PBox.Height);
             g = Graphics.FromImage(bm);
@@ -256,7 +257,7 @@ namespace Malovani
         }
 
         private void CloneAndEnable()
-        {
+        {           
             btmBack = bm.Clone(new Rectangle(0, 0, PBox.Width, PBox.Height), bm.PixelFormat);
             zpětToolStripMenuItem.Enabled = true;
         }
@@ -299,12 +300,13 @@ namespace Malovani
         private void VlevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToolPanel.Dock = DockStyle.Left;
+            PBox.Location = new Point(48, 24);
         }
 
         private void VpravoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToolPanel.Dock = DockStyle.Right;
-            PBox.Dock = DockStyle.Left;
+            PBox.Location = new Point(0, 24);
         }
 
         private void Red_Click(object sender, EventArgs e)
