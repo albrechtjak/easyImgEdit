@@ -2,7 +2,7 @@ CS
 _______________________________________
 Jednoduchý grafický editor v jazyce C#
 
-Jedná se o základní grafický editor napsaný v jazyce C#  s pomocí WinForms. Tato aplikace umožňuje kreslit a několik drůhů tvarů včetně obdélníků, kružnic a čar.
+Jedná se o jednoduchý grafický editor napsaný v jazyce C#  s pomocí WinForms. Tato aplikace umožňuje kreslit od ruky, vybarvovat tvary, přidávat text do orzázku, nebo aplikovat různé filtry
 
 
 Instalace
@@ -12,22 +12,15 @@ Tuto aplikaci můžete nainstalovat stažením instalačního souboru MSI a jeho
 
 Instalace pomocí MSI
 
-Stáhněte si nejnovější instalační soubor MSI ze stránky https://sourceforge.net/projects/malovani
-Dvakrát klikněte na stažený soubor a spusťte instalační proces.
-Instalaci dokončete podle pokynů na obrazovce.
+Stáhněte si instalační soubor MSI ze stránky https://sourceforge.net/projects/malovani
+Poté stažený soubor nainstalujte.
 
 
 Sestavení ze zdrojového kódu
 
-Naklonujte úložiště do místního počítače.
-Otevřete soubor řešení v aplikaci Visual Studio.
+Naklonujte zdojový kód ze sránky https://github.com/albrechtjak/Malovani do svého počítače. 
+Otevřete soubor v aplikaci Visual Studio.
 Sestavte řešení pomocí možnosti nabídky "Sestavit".
-https://github.com/albrechtjak/Malovani
-
-
-Použití
-
-Chcete-li aplikaci spustit, jednoduše dvakrát klikněte na zástupce na ploše nebo na položku nabídky Start. Aplikace se otevře s prázdným plátnem a můžete ihned začít kreslit tvary.
 
 
 Ukládání a načítání výkresů
@@ -58,21 +51,13 @@ Installing via MSI
 
 Download the latest MSI installer file from https://sourceforge.net/projects/malovani
 Double-click the downloaded file to start the installation process.
-Follow the on-screen instructions to complete the installation.
 
 
 Building from Source
 
-Clone the repository to your local machine.
+Clone the repository https://github.com/albrechtjak/Malovani to your computer.
 Open the solution file in Visual Studio.
 Build the solution using the "Build" menu option.
-https://github.com/albrechtjak/Malovani
-
-
-Usage
-
-To start the application, simply double-click the desktop shortcut or start menu entry. The application will open with a blank canvas, and you can begin drawing shapes immediately.
-
 
 
 Saving and Loading Drawings
