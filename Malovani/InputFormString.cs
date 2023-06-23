@@ -11,6 +11,20 @@ namespace Malovani
             InitializeComponent();
             comboBoxFont.SelectedIndex = 0;
             comboBoxSize.SelectedIndex = 0;
+            switch (MainForm.langOpt)
+            {
+                case 1:
+                    label3.Text = "Zadejte požadovaný text, font a velikost";
+                    label4.Text = "Velikost";
+                    break;
+                case 2:
+                    label3.Text = "Enter the desired text, font and size";
+                    label4.Text = "Size";
+                    break;
+            }
+
+
+
         }
 
         public Font Font1 { get; set; }

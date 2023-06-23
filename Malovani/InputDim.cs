@@ -8,6 +8,21 @@ namespace Malovani
         public InputDim()
         {
             InitializeComponent();
+            switch (MainForm.langOpt)
+            {
+                case 1:
+                    this.Text = "Změna rozměrů";
+                    label3.Text = "Změna rozměrů smaže obrázek! Zadávejte celá čisla v pixelech.";
+                    label1.Text = "Výška";
+                    label2.Text = "Šířka";
+                    break;
+                case 2:
+                    this.Text = "Resize picture";
+                    label3.Text = "Resizing will delete the image! Enter integers in pixels.";
+                    label1.Text = "Height";
+                    label2.Text = "Width";
+                    break;
+            }
 
         }
         public int SetHeight { get; set; }
@@ -15,18 +30,8 @@ namespace Malovani
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string h = textBoxH.Text;
-            string w = textBoxW.Text;
-
-            try
-            {
-                SetHeight = int.Parse(h);
-                SetWidth = int.Parse(w);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Zadejte prosim cislo");
-            }
+            SetHeight = Convert.ToInt32(nmVyska.Value);
+            SetWidth = Convert.ToInt32(nmSirka.Value);
         }
 
     }

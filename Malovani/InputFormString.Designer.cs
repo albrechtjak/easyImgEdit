@@ -142,7 +142,7 @@ namespace Malovani
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "InputFormString";
-            this.Text = "Změna rozměru";
+            this.Text = "Text dialog";
             this.ResumeLayout(false);
             this.PerformLayout();
 

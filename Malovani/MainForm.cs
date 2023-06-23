@@ -18,18 +18,16 @@ namespace Malovani
         private Bitmap btmBack = null;
         private int curX, curY, sizX, sizY, dwnX, dwnY;
         private Rectangle screnSize = Screen.PrimaryScreen.WorkingArea;
-        private Color nc;
+        private Color nc = Color.Black;
         private readonly ColorDialog cd = new ColorDialog();
+        public static byte langOpt = 1;
 
         public MainForm()
         {
             InitializeComponent();
 
             this.DoubleBuffered = true;
-            this.SetStyle(
-                ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer,
-                true);
-
+            this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             PBox.Height = screnSize.Height - 50;
             PBox.Width = screnSize.Width - 50;
             bm = new Bitmap(PBox.Width, PBox.Height);
@@ -54,23 +52,24 @@ namespace Malovani
         {
             if (draw)
             {
-                if (option == 1)
+                switch (option)
                 {
-                    point1 = e.Location;
-                    g.DrawLine(p, point1, point2);
-                    point2 = point1;
-                }
-
-                if (option == 2)
-                {
-                    point1 = e.Location;
-                    g.DrawLine(eraser, point1, point2);
-                    point2 = point1;
+                    case 1:
+                        point1 = e.Location;
+                        g.DrawLine(p, point1, point2);
+                        point2 = point1;
+                        break;
+                    case 2:
+                        point1 = e.Location;
+                        g.DrawLine(eraser, point1, point2);
+                        point2 = point1;
+                        break;
                 }
             }
 
             PBox.Refresh();
-            labelPozice.Text = "Pozice kurzoru " + e.Location.ToString();
+
+            labelPozice.Text = e.Location.ToString();
             curX = e.X;
             curY = e.Y;
             sizX = e.X - dwnX;
@@ -257,9 +256,9 @@ namespace Malovani
         }
 
         private void CloneAndEnable()
-        {           
+        {
             btmBack = bm.Clone(new Rectangle(0, 0, PBox.Width, PBox.Height), bm.PixelFormat);
-            zpětToolStripMenuItem.Enabled = true;
+            BackToolStripMenuItem.Enabled = true;
         }
 
         private void Pen_Click(object sender, EventArgs e)
@@ -376,7 +375,7 @@ namespace Malovani
         {
             if (btmBack == null)
             {
-                zpětToolStripMenuItem.Enabled = false;
+                BackToolStripMenuItem.Enabled = false;
             }
             else
             {
@@ -392,11 +391,101 @@ namespace Malovani
             this.Close();
         }
 
+        private void CzToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            langOpt = 1;
+            ChangeLanguage();
+        }
+
+        private void EngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            langOpt = 2;
+            ChangeLanguage();
+        }
+
+        private void ChangeLanguage()
+        {
+            switch (langOpt)
+            {
+                case 1:
+                    NewToolStripMenuItem.Text = "Nový";
+                    OpenToolStripMenuItem.Text = "Otevřít";
+                    BackToolStripMenuItem.Text = "Zpět";
+                    konecToolStripMenuItem.Text = "Konec";
+                    souborToolStripMenuItem.Text = "Soubor";
+                    nastaveníToolStripMenuItem.Text = "Nastavení";
+                    oAplikaciToolStripMenuItem.Text = "O aplikaci";
+                    filtryToolStripMenuItem.Text = "Filtry";
+                    Velikost.Text = "Síla";
+                    pera.Text = "Pera";
+                    černobílýToolStripMenuItem.Text = "Černobílý";
+                    sépieToolStripMenuItem.Text = "Sépie";
+                    AktualniBarva_Label.Text = "Vybraná barva:";
+                    pozicelabel2.Text = "Pozice kurzoru:";
+                    jazykToolStripMenuItem.Text = "Jazyk";
+                    SetDimObrazkuToolStripMenuItem.Text = "Rozměry obrázku";
+                    umísteníPaneluNástojůToolStripMenuItem.Text = "Umístění panelu nástrojů";
+                    vlevoToolStripMenuItem.Text = "Vlevo";
+                    vpravoToolStripMenuItem.Text = "Vpravo";
+                    napovedaToolStripMenuItem.Text = "Nápověda";
+                    SaveToolStripMenuItem.Text = "Uložit";
+                    czToolStripMenuItem.Text = "Čeština";
+                    enToolStripMenuItem.Text = "Angličtina";
+                    toolTip1.SetToolTip(button_Color, "Otevře okno pro výběr barvy.");
+                    toolTip1.SetToolTip(button_Pencil, "Kreslení od ruky");
+                    toolTip1.SetToolTip(buttonElipse, "Kreslení elispy");
+                    toolTip1.SetToolTip(button_Line, "Kreslení čáry");
+                    toolTip1.SetToolTip(button_Rect, "Kreslení obdélníku");
+                    toolTip1.SetToolTip(button_Rubb, "Guma");
+                    toolTip1.SetToolTip(button_Fill, "Vyplnit barvou");
+                    toolTip1.SetToolTip(button_Text, "Vykreslení textu");
+                    toolTip1.SetToolTip(tb, "Nastaví tlouštku čáry");
+
+                    break;
+                case 2:
+                    NewToolStripMenuItem.Text = "New project";
+                    OpenToolStripMenuItem.Text = "Open";
+                    BackToolStripMenuItem.Text = "Back";
+                    konecToolStripMenuItem.Text = "End";
+                    souborToolStripMenuItem.Text = "File";
+                    nastaveníToolStripMenuItem.Text = "Settings";
+                    oAplikaciToolStripMenuItem.Text = "About";
+                    filtryToolStripMenuItem.Text = "Filters";
+                    Velikost.Text = "Thick";
+                    pera.Text = "ness";
+                    černobílýToolStripMenuItem.Text = "Black and White";
+                    sépieToolStripMenuItem.Text = "Sepia";
+                    AktualniBarva_Label.Text = "Selected color:";
+                    pozicelabel2.Text = "Cursor position:";
+                    jazykToolStripMenuItem.Text = "Language";
+                    SetDimObrazkuToolStripMenuItem.Text = "Picture size";
+                    umísteníPaneluNástojůToolStripMenuItem.Text = "Toolbar location";
+                    vlevoToolStripMenuItem.Text = "Left";
+                    vpravoToolStripMenuItem.Text = "Right";
+                    napovedaToolStripMenuItem.Text = "Help";
+                    SaveToolStripMenuItem.Text = "Save";
+                    czToolStripMenuItem.Text = "Czech";
+                    enToolStripMenuItem.Text = "English";
+                    toolTip1.SetToolTip(button_Color, "Opens color picker");
+                    toolTip1.SetToolTip(button_Pencil, "Drawing by hand");
+                    toolTip1.SetToolTip(buttonElipse, "Drawing an elipse");
+                    toolTip1.SetToolTip(button_Line, "Drawing a line");
+                    toolTip1.SetToolTip(button_Rect, "Drawing a rectangle");
+                    toolTip1.SetToolTip(button_Rubb, "Rubber");
+                    toolTip1.SetToolTip(button_Fill, "Fill with colour");
+                    toolTip1.SetToolTip(button_Text, "Text rendering");
+                    toolTip1.SetToolTip(tb, "Set thickness of line");
+
+
+                    break;
+            }
+        }
+
         private void SouborToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
             if (btmBack == null)
             {
-                zpětToolStripMenuItem.Enabled = false;
+                BackToolStripMenuItem.Enabled = false;
             }
         }
 
