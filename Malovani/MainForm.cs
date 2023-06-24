@@ -29,6 +29,7 @@ namespace Malovani
 
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
+            this.UpdateStyles();
             PBox.Height = screnSize.Height - 50;
             PBox.Width = screnSize.Width - 50;
             bm = new Bitmap(PBox.Width, PBox.Height);

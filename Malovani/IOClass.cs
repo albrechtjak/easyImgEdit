@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 
@@ -47,13 +48,18 @@ namespace Malovani
                 bm = new Bitmap(open.FileName);
                 if (bm.Width > pic.Width || bm.Height > pic.Height)
                 {
-                    pic.Image = bm;
+                    // Výpočet poměru stran
+                    float pomer = Math.Min((float)pic.Width / bm.Width, (float)pic.Height / bm.Height);
+
+                    // Vytvoření bitmapy s novými rozměry
+                    Bitmap rszdBm = new Bitmap(bm, new Size((int)(bm.Width * pomer), (int)(bm.Height * pomer)));
+
+                    bm.Dispose();  
+                    bm = rszdBm;
                 }
-                else
-                {
-                    pic.Image = bm;
-                    pic.Size = new Size(bm.Width, bm.Height);
-                }
+
+                pic.Image = bm;
+                pic.Size = new Size(bm.Width, bm.Height);
             }
             return bm;
         }
