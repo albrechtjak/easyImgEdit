@@ -14,6 +14,7 @@ namespace Malovani
         private Point point1, point2;
         private readonly Pen p = new Pen(Color.Black, 1);
         private readonly Pen eraser = new Pen(Color.White, 10);
+        private readonly Pen txtPen = new Pen(Color.Black, 1);
         private int option;
         private Bitmap btmBack = null;
         private int curX, curY, sizX, sizY, dwnX, dwnY;
@@ -37,6 +38,10 @@ namespace Malovani
 
             g.SmoothingMode = SmoothingMode.HighQuality;
             option = 1;
+            p.StartCap = LineCap.Round;
+            p.EndCap = LineCap.Round;
+            txtPen.DashStyle = DashStyle.Dash;
+            
         }
 
         private void PBox_MouseDown(object sender, MouseEventArgs e)
@@ -116,12 +121,14 @@ namespace Malovani
                         g.DrawEllipse(p, dwnX, dwnY, sizX, sizY);
                         break;
                     case 4:
-                    case 7:
                         g.DrawRectangle(p, dwnX, dwnY, sizX, sizY);
+                        break;
+                    case 7:
+                        g.DrawRectangle(txtPen, dwnX, dwnY, sizX, sizY);
                         break;
                     case 5:
                         g.DrawLine(p, dwnX, dwnY, curX, curY);
-                        break;
+                        break;                       
                 }
             }
         }
@@ -150,44 +157,36 @@ namespace Malovani
             }
         }
 
+         public void Fill(Bitmap bm, int x, int y, Color nc)
+         {
+             Color oc = bm.GetPixel(x, y);
+             Stack<Point> pixStack = new Stack<Point>();
+             pixStack.Push(new Point(x, y));
+             bm.SetPixel(x, y, nc);
+             if (oc == nc)
+             {
+                 return;
+             }
 
-        public void Fill(Bitmap bm, int x, int y, Color nc)
-        {
-            Color oc = bm.GetPixel(x, y);
-            Stack<Point> pixStack = new Stack<Point>();
-            pixStack.Push(new Point(x, y));
-            bm.SetPixel(x, y, nc);
-            if (oc == nc)
-            {
-                return;
+             while (pixStack.Count > 0)
+             {
+                 Point bod = pixStack.Pop();
+                 if (bod.X > 0 && bod.Y > 0 && bod.X < bm.Width - 1 && bod.Y < bm.Height - 1)
+                 {
+                     PixelControl(bm, pixStack, bod.X - 1, bod.Y, oc, nc);
+                     PixelControl(bm, pixStack, bod.X, bod.Y - 1, oc, nc);
+                     PixelControl(bm, pixStack, bod.X + 1, bod.Y, oc, nc);
+                     PixelControl(bm, pixStack, bod.X, bod.Y + 1, oc, nc);
+                 }
+                Cursor.Current = Cursors.WaitCursor;
             }
-
-            while (pixStack.Count > 0)
-            {
-                Point bod = pixStack.Pop();
-                if (bod.X > 0 && bod.Y > 0 && bod.X < bm.Width - 1 && bod.Y < bm.Height - 1)
-                {
-                    PixelControl(bm, pixStack, bod.X - 1, bod.Y, oc, nc);
-                    PixelControl(bm, pixStack, bod.X, bod.Y - 1, oc, nc);
-                    PixelControl(bm, pixStack, bod.X + 1, bod.Y, oc, nc);
-                    PixelControl(bm, pixStack, bod.X, bod.Y + 1, oc, nc);
-                }
-            }
-        }
-
-        private static Point PointForFill(PictureBox pic, Point bod)
-        {
-            float pntX = 1f * pic.Width / pic.Width;
-            float pntY = 1f * pic.Height / pic.Height;
-            return new Point((int)(bod.X * pntX), (int)(bod.Y * pntY));
-        }
+         }
 
         private void Pic_MouseClick(object sender, MouseEventArgs e)
         {
             if (option == 6)
             {
-                Point pnt = PointForFill(PBox, e.Location);
-                Fill(bm, pnt.X, pnt.Y, nc);
+                Fill(bm, e.X, e.Y, nc);
             }
         }
 
@@ -207,8 +206,9 @@ namespace Malovani
                     Color oldC = bm.GetPixel(y, x);
                     int grayScale = (int)((oldC.R * 0.3) + (oldC.G * 0.59) + (oldC.B * 0.11));
                     Color newC = Color.FromArgb(oldC.A, grayScale, grayScale, grayScale);
-                    bm.SetPixel(y, x, newC);
+                    bm.SetPixel(y, x, newC);                   
                 }
+                Cursor.Current = Cursors.WaitCursor;
             }
         }
 
@@ -223,6 +223,7 @@ namespace Malovani
                     Color newC = Color.FromArgb(255, (255 - oldC.R), (255 - oldC.G), (255 - oldC.B));
                     bm.SetPixel(y, x, newC);
                 }
+                Cursor.Current = Cursors.WaitCursor;
             }
         }
 
@@ -252,6 +253,7 @@ namespace Malovani
                     //nastavení nové barvy pixelu
                     bm.SetPixel(x, y, Color.FromArgb(a, r, g, b));
                 }
+                Cursor.Current = Cursors.WaitCursor;
             }
         }
 
