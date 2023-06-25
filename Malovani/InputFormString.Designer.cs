@@ -1,5 +1,5 @@
 ﻿
-namespace Malovani
+namespace EasyImgEdit
 {
     partial class InputFormString
     {

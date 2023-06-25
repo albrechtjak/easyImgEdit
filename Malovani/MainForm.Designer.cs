@@ -1,4 +1,4 @@
-﻿namespace Malovani
+﻿namespace EasyImgEdit
 {
     partial class MainForm
     {
@@ -100,7 +100,6 @@
             this.ToolPanel.Controls.Add(this.pera);
             this.ToolPanel.Controls.Add(this.Velikost);
             this.ToolPanel.Controls.Add(this.tb);
-            this.ToolPanel.Controls.Add(this.button_Color);
             this.ToolPanel.Controls.Add(this.button_Fill);
             this.ToolPanel.Controls.Add(this.button_Line);
             this.ToolPanel.Controls.Add(this.button_Rect);
@@ -124,9 +123,9 @@
             this.button_Text.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Text.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Text.ForeColor = System.Drawing.Color.Black;
-            this.button_Text.Location = new System.Drawing.Point(3, 291);
+            this.button_Text.Location = new System.Drawing.Point(5, 288);
             this.button_Text.Name = "button_Text";
-            this.button_Text.Size = new System.Drawing.Size(35, 35);
+            this.button_Text.Size = new System.Drawing.Size(32, 37);
             this.button_Text.TabIndex = 11;
             this.button_Text.Text = "A";
             this.toolTip1.SetToolTip(this.button_Text, "Vyskreslení textu");
@@ -137,7 +136,7 @@
             // 
             this.silaPera.AutoSize = true;
             this.silaPera.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.silaPera.Location = new System.Drawing.Point(10, 399);
+            this.silaPera.Location = new System.Drawing.Point(11, 399);
             this.silaPera.Name = "silaPera";
             this.silaPera.Size = new System.Drawing.Size(17, 17);
             this.silaPera.TabIndex = 10;
@@ -164,7 +163,7 @@
             // tb
             // 
             this.tb.AutoSize = false;
-            this.tb.Location = new System.Drawing.Point(3, 419);
+            this.tb.Location = new System.Drawing.Point(1, 419);
             this.tb.Maximum = 25;
             this.tb.Minimum = 1;
             this.tb.Name = "tb";
@@ -186,9 +185,9 @@
             this.button_Color.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.button_Color.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Color.ForeColor = System.Drawing.Color.Transparent;
-            this.button_Color.Location = new System.Drawing.Point(3, 4);
+            this.button_Color.Location = new System.Drawing.Point(220, 2);
             this.button_Color.Name = "button_Color";
-            this.button_Color.Size = new System.Drawing.Size(35, 35);
+            this.button_Color.Size = new System.Drawing.Size(25, 25);
             this.button_Color.TabIndex = 6;
             this.toolTip1.SetToolTip(this.button_Color, "Otevře okno pro výběr barvy.");
             this.button_Color.UseVisualStyleBackColor = true;
@@ -421,14 +420,14 @@
             // czToolStripMenuItem
             // 
             this.czToolStripMenuItem.Name = "czToolStripMenuItem";
-            this.czToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.czToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.czToolStripMenuItem.Text = "Čeština";
             this.czToolStripMenuItem.Click += new System.EventHandler(this.CzToolStripMenuItem_Click);
             // 
             // enToolStripMenuItem
             // 
             this.enToolStripMenuItem.Name = "enToolStripMenuItem";
-            this.enToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.enToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.enToolStripMenuItem.Text = "Angličtina";
             this.enToolStripMenuItem.Click += new System.EventHandler(this.EngToolStripMenuItem_Click);
             // 
@@ -445,21 +444,21 @@
             // černobílýToolStripMenuItem
             // 
             this.černobílýToolStripMenuItem.Name = "černobílýToolStripMenuItem";
-            this.černobílýToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.černobílýToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.černobílýToolStripMenuItem.Text = "Černobílý";
             this.černobílýToolStripMenuItem.Click += new System.EventHandler(this.CernobilyToolStripMenuItem_Click);
             // 
             // sépieToolStripMenuItem
             // 
             this.sépieToolStripMenuItem.Name = "sépieToolStripMenuItem";
-            this.sépieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sépieToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.sépieToolStripMenuItem.Text = "Sépie";
             this.sépieToolStripMenuItem.Click += new System.EventHandler(this.SepieToolStripMenuItem_Click);
             // 
             // negativToolStripMenuItem
             // 
             this.negativToolStripMenuItem.Name = "negativToolStripMenuItem";
-            this.negativToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.negativToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.negativToolStripMenuItem.Text = "Negativ";
             this.negativToolStripMenuItem.Click += new System.EventHandler(this.NegativToolStripMenuItem_Click);
             // 
@@ -487,6 +486,7 @@
             this.ColorPanel.Controls.Add(this.currColor);
             this.ColorPanel.Controls.Add(this.Black);
             this.ColorPanel.Controls.Add(this.White);
+            this.ColorPanel.Controls.Add(this.button_Color);
             this.ColorPanel.Controls.Add(this.Gray);
             this.ColorPanel.Controls.Add(this.Brown);
             this.ColorPanel.Controls.Add(this.Purple);
@@ -536,7 +536,7 @@
             // 
             this.Black.BackColor = System.Drawing.Color.Black;
             this.Black.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Black.Location = new System.Drawing.Point(500, 3);
+            this.Black.Location = new System.Drawing.Point(541, 3);
             this.Black.Name = "Black";
             this.Black.Size = new System.Drawing.Size(23, 23);
             this.Black.TabIndex = 15;
@@ -547,7 +547,7 @@
             // 
             this.White.BackColor = System.Drawing.Color.White;
             this.White.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.White.Location = new System.Drawing.Point(471, 3);
+            this.White.Location = new System.Drawing.Point(512, 3);
             this.White.Name = "White";
             this.White.Size = new System.Drawing.Size(23, 23);
             this.White.TabIndex = 14;
@@ -558,7 +558,7 @@
             // 
             this.Gray.BackColor = System.Drawing.Color.Gray;
             this.Gray.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Gray.Location = new System.Drawing.Point(442, 3);
+            this.Gray.Location = new System.Drawing.Point(483, 3);
             this.Gray.Name = "Gray";
             this.Gray.Size = new System.Drawing.Size(23, 23);
             this.Gray.TabIndex = 13;
@@ -569,7 +569,7 @@
             // 
             this.Brown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Brown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Brown.Location = new System.Drawing.Point(413, 3);
+            this.Brown.Location = new System.Drawing.Point(454, 3);
             this.Brown.Name = "Brown";
             this.Brown.Size = new System.Drawing.Size(23, 23);
             this.Brown.TabIndex = 12;
@@ -580,7 +580,7 @@
             // 
             this.Purple.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Purple.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Purple.Location = new System.Drawing.Point(384, 3);
+            this.Purple.Location = new System.Drawing.Point(425, 3);
             this.Purple.Name = "Purple";
             this.Purple.Size = new System.Drawing.Size(23, 23);
             this.Purple.TabIndex = 11;
@@ -591,7 +591,7 @@
             // 
             this.Magneta.BackColor = System.Drawing.Color.Purple;
             this.Magneta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Magneta.Location = new System.Drawing.Point(355, 3);
+            this.Magneta.Location = new System.Drawing.Point(396, 3);
             this.Magneta.Name = "Magneta";
             this.Magneta.Size = new System.Drawing.Size(23, 23);
             this.Magneta.TabIndex = 10;
@@ -611,7 +611,7 @@
             // 
             this.Blue.BackColor = System.Drawing.Color.Blue;
             this.Blue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Blue.Location = new System.Drawing.Point(326, 3);
+            this.Blue.Location = new System.Drawing.Point(367, 3);
             this.Blue.Name = "Blue";
             this.Blue.Size = new System.Drawing.Size(23, 23);
             this.Blue.TabIndex = 8;
@@ -622,7 +622,7 @@
             // 
             this.Green.BackColor = System.Drawing.Color.Green;
             this.Green.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Green.Location = new System.Drawing.Point(297, 3);
+            this.Green.Location = new System.Drawing.Point(338, 3);
             this.Green.Name = "Green";
             this.Green.Size = new System.Drawing.Size(23, 23);
             this.Green.TabIndex = 7;
@@ -633,7 +633,7 @@
             // 
             this.Yellow.BackColor = System.Drawing.Color.Yellow;
             this.Yellow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Yellow.Location = new System.Drawing.Point(268, 3);
+            this.Yellow.Location = new System.Drawing.Point(309, 3);
             this.Yellow.Name = "Yellow";
             this.Yellow.Size = new System.Drawing.Size(23, 23);
             this.Yellow.TabIndex = 6;
@@ -644,7 +644,7 @@
             // 
             this.Orange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Orange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Orange.Location = new System.Drawing.Point(239, 3);
+            this.Orange.Location = new System.Drawing.Point(280, 3);
             this.Orange.Name = "Orange";
             this.Orange.Size = new System.Drawing.Size(23, 23);
             this.Orange.TabIndex = 5;
@@ -655,7 +655,7 @@
             // 
             this.Red.BackColor = System.Drawing.Color.Red;
             this.Red.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Red.Location = new System.Drawing.Point(210, 3);
+            this.Red.Location = new System.Drawing.Point(251, 3);
             this.Red.Name = "Red";
             this.Red.Size = new System.Drawing.Size(23, 23);
             this.Red.TabIndex = 4;
@@ -695,7 +695,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Malování";
+            this.Text = "EasyImgEdit";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ToolPanel.ResumeLayout(false);
             this.ToolPanel.PerformLayout();

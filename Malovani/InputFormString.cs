@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Malovani
+namespace EasyImgEdit
 {
     public partial class InputFormString : Form
     {

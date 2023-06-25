@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Malovani
+namespace EasyImgEdit
 {
     public partial class InputDim : Form
     {

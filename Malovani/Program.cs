@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Malovani
+namespace EasyImgEdit
 {
     internal static class Program
     {

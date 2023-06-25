@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Malovani.Properties {
+namespace EasyImgEdit.Properties {
     using System;
     
     

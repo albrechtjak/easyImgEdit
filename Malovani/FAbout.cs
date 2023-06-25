@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Windows.Forms;
 
-namespace Malovani
+namespace EasyImgEdit
 {
     internal partial class FAbout : Form
     {
@@ -13,7 +13,7 @@ namespace Malovani
             labelVersion.Text = string.Format("Verze {0}", AssemblyVersion);
             labelCopyright.Text = AssemblyCopyright;
             labelCompanyName.Text = "Jakub Albrecht";
-            textBoxDescription.Text = "Jednoduchá aplikace na kreslení";
+            textBoxDescription.Text = "Jednoduchý obrázkový editor v naprogramovaný jazykem C#";
         }
 
         #region Přístup k atributům sestavení
