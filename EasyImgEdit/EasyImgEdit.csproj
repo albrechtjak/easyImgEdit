@@ -7,8 +7,8 @@
     <ProjectGuid>{9040DE38-32E8-414C-8272-70F80AAF797C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Malovani</RootNamespace>
-    <AssemblyName>Malovani</AssemblyName>
+    <RootNamespace>EasyImgEdit</RootNamespace>
+    <AssemblyName>EasyImgEdit</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

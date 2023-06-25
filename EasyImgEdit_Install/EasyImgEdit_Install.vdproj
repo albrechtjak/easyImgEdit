@@ -71,7 +71,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\Install_Malovani.msi"
+        "OutputFilename" = "8:Release\\EasyImgEdit_Install.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -213,7 +213,7 @@
         "ProductVersion" = "8:1.2.7"
         "Manufacturer" = "8:Jakub Albrecht"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:https://github.com/albrechtjak/Malovani"
+        "ARPHELPLINK" = "8:https://github.com/albrechtjak/easyImgEdit"
         "Title" = "8:EasyImgEdit_Install"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Jakub Albrecht"
@@ -752,7 +752,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_FE0EEE621BD34F63A8B1A46224DEF3D0"
             {
-            "SourcePath" = "8:..\\Malovani\\obj\\Debug\\Malovani.exe"
+            "SourcePath" = "8:..\\EasyImgEdit\\obj\\Debug\\EasyImgEdit.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_ACDFB358418C4A368FDC6EF843066F5B"
