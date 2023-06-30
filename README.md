@@ -22,6 +22,10 @@ Naklonujte zdojový kód ze sránky https://github.com/albrechtjak/easyImgEdit d
 Otevřete soubor v aplikaci Visual Studio.
 Sestavte řešení pomocí možnosti nabídky "Sestavit".
 
+Portable verze
+Stahněte si zip soubor ze stránky https://sourceforge.net/projects/easyImgEdit. Extrahujte a spusťte .exe soubor, Je nutné mít nasitalované .NET Framework.
+
+
 
 Ukládání a načítání výkresů
 
@@ -58,6 +62,11 @@ Building from Source
 Clone the repository https://github.com/albrechtjak/easyImgEdit to your computer.
 Open the solution file in Visual Studio.
 Build the solution using the "Build" menu option.
+
+
+Portable version
+
+Download the zip file from https://sourceforge.net/projects/easyImgEdit. Extract and run the .exe file, It is required to have the .NET Framework installed.
 
 
 Saving and Loading Drawings
