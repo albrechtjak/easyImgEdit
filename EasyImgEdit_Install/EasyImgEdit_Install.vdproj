@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_7A0E44D32D5240F082AE3125781BE690"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_FE0EEE621BD34F63A8B1A46224DEF3D0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -146,6 +152,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A0E44D32D5240F082AE3125781BE690"
+            {
+            "SourcePath" = "8:..\\LICENCE.txt"
+            "TargetName" = "8:LICENCE.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_ACDFB358418C4A368FDC6EF843066F5B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -203,7 +229,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:EasyImgEdit"
         "ProductCode" = "8:{68D78F0B-79CE-4E51-A848-3982BC28E22F}"
-        "PackageCode" = "8:{4F8005F5-45A2-4E4B-8973-AB0BB80F8321}"
+        "PackageCode" = "8:{B7CA5060-6722-47F8-936A-2F6CB32042C6}"
         "UpgradeCode" = "8:{F80DEBB2-3B4E-4EF6-82E6-81A740F28F30}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

@@ -113,15 +113,12 @@ namespace EasyImgEdit
             this.comboBoxSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSize.FormattingEnabled = true;
             this.comboBoxSize.Items.AddRange(new object[] {
-            "8",
-            "10",
             "12",
-            "16",
-            "20",
-            "26",
+            "24",
             "32",
-            "46",
-            "64"});
+            "48",
+            "64",
+            "76"});
             this.comboBoxSize.Location = new System.Drawing.Point(228, 82);
             this.comboBoxSize.Name = "comboBoxSize";
             this.comboBoxSize.Size = new System.Drawing.Size(102, 21);

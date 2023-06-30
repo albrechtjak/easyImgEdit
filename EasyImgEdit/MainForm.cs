@@ -11,7 +11,7 @@ namespace EasyImgEdit
         private Bitmap bm;
         private Graphics g;
         private bool draw = false;
-        private Point point1, point2;
+        private Point point1, pointDwn;
         private readonly Pen p = new Pen(Color.Black, 1);
         private readonly Pen eraser = new Pen(Color.White, 10);
         private readonly Pen txtPen = new Pen(Color.Black, 1);
@@ -42,13 +42,12 @@ namespace EasyImgEdit
             p.StartCap = LineCap.Round;
             p.EndCap = LineCap.Round;
             txtPen.DashStyle = DashStyle.Dash;
-            
         }
 
         private void PBox_MouseDown(object sender, MouseEventArgs e)
         {
             draw = true;
-            point2 = e.Location;
+            pointDwn = e.Location;
             dwnX = e.X;
             dwnY = e.Y;
             CloneAndEnable();
@@ -62,53 +61,22 @@ namespace EasyImgEdit
                 {
                     case 1:
                         point1 = e.Location;
-                        g.DrawLine(p, point1, point2);
-                        point2 = point1;
+                        g.DrawLine(p, point1, pointDwn);
+                        pointDwn = point1;
                         break;
                     case 2:
                         point1 = e.Location;
-                        g.DrawLine(eraser, point1, point2);
-                        point2 = point1;
+                        g.DrawLine(eraser, point1, pointDwn);
+                        pointDwn = point1;
                         break;
                 }
             }
-
             PBox.Refresh();
-
             labelPozice.Text = e.Location.ToString();
             curX = e.X;
             curY = e.Y;
-            sizX = e.X - dwnX;
-            sizY = e.Y - dwnY;
-        }
-
-        private void Pic_MouseUp(object sender, MouseEventArgs e)
-        {
-            draw = false;
-
-            sizX = curX - dwnX;
-            sizY = curY - dwnY;
-            switch (option)
-            {
-                case 3:
-                    g.DrawEllipse(p, dwnX, dwnY, sizX, sizY);
-                    break;
-                case 4:
-                    g.DrawRectangle(p, dwnX, dwnY, sizX, sizY);
-                    break;
-                case 5:
-                    g.DrawLine(p, dwnX, dwnY, curX, curY);
-                    break;
-                case 7:
-                    Rectangle inputrect = new Rectangle(dwnX, dwnY, sizX, sizY);
-                    Brush brush = new SolidBrush(p.Color);
-
-                    InputFormString inputfrm = new InputFormString();
-                    inputfrm.ShowDialog();
-
-                    g.DrawString(inputfrm.Text1, inputfrm.Font1, brush, inputrect);
-                    break;
-            }
+            sizX = Math.Abs(e.X - dwnX);
+            sizY = Math.Abs(e.Y - dwnY);
         }
 
         private void PBox_Draw(object sender, PaintEventArgs e)
@@ -119,19 +87,47 @@ namespace EasyImgEdit
                 switch (option)
                 {
                     case 3:
-                        g.DrawEllipse(p, dwnX, dwnY, sizX, sizY);
+                        g.DrawEllipse(p, Math.Min(dwnX, curX), Math.Min(dwnY, curY), sizX, sizY);
                         break;
                     case 4:
-                        g.DrawRectangle(p, dwnX, dwnY, sizX, sizY);
+                        g.DrawRectangle(p, Math.Min(dwnX, curX), Math.Min(dwnY, curY), sizX, sizY);
                         break;
                     case 7:
-                        g.DrawRectangle(txtPen, dwnX, dwnY, sizX, sizY);
+                        g.DrawRectangle(txtPen, Math.Min(dwnX, curX), Math.Min(dwnY, curY), sizX, sizY);
                         break;
                     case 5:
                         g.DrawLine(p, dwnX, dwnY, curX, curY);
-                        break;                       
+                        break;
                 }
             }
+        }
+
+        private void Pic_MouseUp(object sender, MouseEventArgs e)
+        {
+            draw = false;
+            sizX = Math.Abs(curX - dwnX);
+            sizY = Math.Abs(curY - dwnY);
+            switch (option)
+            {
+                case 3:
+                    g.DrawEllipse(p, dwnX, dwnY, sizX, sizY);
+                    break;
+                case 4:
+                    g.DrawRectangle(p, Math.Min(dwnX, curX), Math.Min(dwnY, curY), sizX, sizY);
+                    break;
+                case 5:
+                    g.DrawLine(p, dwnX, dwnY, curX, curY);
+                    break;
+                case 7:
+                    Rectangle inputrect = new Rectangle(Math.Min(dwnX, curX), Math.Min(dwnY, curY), sizX, sizY);
+                    Brush brush = new SolidBrush(p.Color);
+                    InputFormString inputfrm = new InputFormString();
+                    inputfrm.ShowDialog();
+                    g.DrawString(inputfrm.Text1, inputfrm.Font1, brush, inputrect);
+                    break;
+            }
+            sizY = 0;
+            sizX = 0;
         }
 
         private void SetDimPic(object sender, EventArgs e)
@@ -158,30 +154,30 @@ namespace EasyImgEdit
             }
         }
 
-         public void Fill(Bitmap bm, int x, int y, Color nc)
-         {
-             Color oc = bm.GetPixel(x, y);
-             Stack<Point> pixStack = new Stack<Point>();
-             pixStack.Push(new Point(x, y));
-             bm.SetPixel(x, y, nc);
-             if (oc == nc)
-             {
-                 return;
-             }
+        public void Fill(Bitmap bm, int x, int y, Color nc)
+        {
+            Color oc = bm.GetPixel(x, y);
+            Stack<Point> pixStack = new Stack<Point>();
+            pixStack.Push(new Point(x, y));
+            bm.SetPixel(x, y, nc);
+            if (oc == nc)
+            {
+                return;
+            }
 
-             while (pixStack.Count > 0)
-             {
-                 Point bod = pixStack.Pop();
-                 if (bod.X > 0 && bod.Y > 0 && bod.X < bm.Width - 1 && bod.Y < bm.Height - 1)
-                 {
-                     PixelControl(bm, pixStack, bod.X - 1, bod.Y, oc, nc);
-                     PixelControl(bm, pixStack, bod.X, bod.Y - 1, oc, nc);
-                     PixelControl(bm, pixStack, bod.X + 1, bod.Y, oc, nc);
-                     PixelControl(bm, pixStack, bod.X, bod.Y + 1, oc, nc);
-                 }
+            while (pixStack.Count > 0)
+            {
+                Point bod = pixStack.Pop();
+                if (bod.X > 0 && bod.Y > 0 && bod.X < bm.Width - 1 && bod.Y < bm.Height - 1)
+                {
+                    PixelControl(bm, pixStack, bod.X - 1, bod.Y, oc, nc);
+                    PixelControl(bm, pixStack, bod.X, bod.Y - 1, oc, nc);
+                    PixelControl(bm, pixStack, bod.X + 1, bod.Y, oc, nc);
+                    PixelControl(bm, pixStack, bod.X, bod.Y + 1, oc, nc);
+                }
                 Cursor.Current = Cursors.WaitCursor;
             }
-         }
+        }
 
         private void Pic_MouseClick(object sender, MouseEventArgs e)
         {
@@ -207,7 +203,7 @@ namespace EasyImgEdit
                     Color oldC = bm.GetPixel(y, x);
                     int grayScale = (int)((oldC.R * 0.3) + (oldC.G * 0.59) + (oldC.B * 0.11));
                     Color newC = Color.FromArgb(oldC.A, grayScale, grayScale, grayScale);
-                    bm.SetPixel(y, x, newC);                   
+                    bm.SetPixel(y, x, newC);
                 }
                 Cursor.Current = Cursors.WaitCursor;
             }
@@ -267,36 +263,44 @@ namespace EasyImgEdit
         private void Pen_Click(object sender, EventArgs e)
         {
             option = 1;
+            AllBtnstoTransparent();
         }
 
         private void Rubb_Click(object sender, EventArgs e)
         {
             option = 2;
+            AllBtnstoTransparent();
         }
 
         private void Ellipse_Click(object sender, EventArgs e)
         {
             option = 3;
+            AllBtnstoTransparent();
         }
 
         private void Rect_Click(object sender, EventArgs e)
         {
             option = 4;
+            AllBtnstoTransparent();
         }
 
         private void Line_Click(object sender, EventArgs e)
         {
             option = 5;
+            AllBtnstoTransparent();
         }
 
         private void Filler_Click(object sender, EventArgs e)
         {
             option = 6;
+            AllBtnstoTransparent();
+            button_Fill.BackColor = Color.Gray;
         }
 
         private void Text_Click(object sender, EventArgs e)
         {
             option = 7;
+            AllBtnstoTransparent();
         }
 
         private void VlevoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -483,7 +487,41 @@ namespace EasyImgEdit
                     break;
             }
         }
+        private void AllBtnstoTransparent()
+        {
+            button_Pencil.BackColor = Color.Transparent;
+            button_Rubb.BackColor = Color.Transparent;
+            button_Line.BackColor = Color.Transparent;
+            buttonElipse.BackColor = Color.Transparent;
+            button_Text.BackColor = Color.Transparent;
+            button_Rect.BackColor = Color.Transparent;
+            button_Fill.BackColor = Color.Transparent;
 
+            switch (option)
+            {
+                case 1:
+                    button_Pencil.BackColor = Color.Gray;
+                    break;
+                case 2:
+                    button_Rubb.BackColor = Color.Gray;
+                    break;
+                case 3:
+                    buttonElipse.BackColor = Color.Gray;
+                    break;
+                case 4:
+                    button_Rect.BackColor = Color.Gray;
+                    break;
+                case 5:
+                    button_Line.BackColor = Color.Gray;
+                    break;
+                case 6:
+                    button_Fill.BackColor = Color.Gray;
+                    break;
+                case 7:
+                    button_Text.BackColor = Color.Gray;
+                    break;
+            }
+        }
         private void SouborToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
             if (btmBack == null)

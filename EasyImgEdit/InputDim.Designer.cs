@@ -99,7 +99,7 @@ namespace EasyImgEdit
             this.nmVyska.Size = new System.Drawing.Size(69, 20);
             this.nmVyska.TabIndex = 6;
             this.nmVyska.Value = new decimal(new int[] {
-            200,
+            800,
             0,
             0,
             0});
@@ -126,7 +126,7 @@ namespace EasyImgEdit
             this.nmSirka.Size = new System.Drawing.Size(69, 20);
             this.nmSirka.TabIndex = 7;
             this.nmSirka.Value = new decimal(new int[] {
-            200,
+            1200,
             0,
             0,
             0});

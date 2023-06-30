@@ -12,13 +12,13 @@ Tuto aplikaci můžete nainstalovat stažením instalačního souboru MSI a jeho
 
 Instalace pomocí MSI
 
-Stáhněte si instalační soubor MSI ze stránky https://sourceforge.net/projects/malovani
+Stáhněte si instalační soubor MSI ze stránky https://sourceforge.net/projects/easyImgEdit
 Poté stažený soubor nainstalujte.
 
 
 Sestavení ze zdrojového kódu
 
-Naklonujte zdojový kód ze sránky https://github.com/albrechtjak/Malovani do svého počítače. 
+Naklonujte zdojový kód ze sránky https://github.com/albrechtjak/easyImgEdit do svého počítače. 
 Otevřete soubor v aplikaci Visual Studio.
 Sestavte řešení pomocí možnosti nabídky "Sestavit".
 
@@ -49,13 +49,13 @@ You can install this application by downloading the MSI installer file and runni
 
 Installing via MSI
 
-Download the latest MSI installer file from https://sourceforge.net/projects/malovani
+Download the latest MSI installer file from https://sourceforge.net/projects/easyImgEdit
 Double-click the downloaded file to start the installation process.
 
 
 Building from Source
 
-Clone the repository https://github.com/albrechtjak/Malovani to your computer.
+Clone the repository https://github.com/albrechtjak/easyImgEdit to your computer.
 Open the solution file in Visual Studio.
 Build the solution using the "Build" menu option.
 
